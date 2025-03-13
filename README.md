@@ -1,8 +1,8 @@
 # Nikelson Michel
 
-# Education
+## Education
 
-# Word Experience
+## Word Experience
 
-# Projets
+## Projets
 
