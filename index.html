@@ -3,58 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikelson Michel</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-        header { background: #333; color: white; padding: 20px; text-align: center; }
-        nav { text-align: center; padding: 10px; background: #444; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; }
-        .container { width: 80%; margin: 20px auto; }
-        .project { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 20px; }
-    </style>
+    <title>Portfolio - Data Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Nikelson Michel</h1>
-        <p> AI & Data Automation Process | Analyses | Visualization | Forecasting </p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     
-    <nav>
-        <a href="#about">À Propos</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    
-    <div class="container">
-        <section id="about">
-            <h2>About</h2>
-            <p>Education</p>
-               
-        </section>
-        
-        <section id="projects">
-            <h2>Projets</h2>
-            <div class="project">
-                <h3>Analyse des ventes avec Excel</h3>
-                <p>Un projet d'analyse des ventes en utilisant Excel et des tableaux croisés dynamiques.</p>
-                <a href="https://github.com/ton_nom/projets/blob/main/analyse_ventes.xlsx" target="_blank">Télécharger le fichier Excel</a>
-            </div>
-            <div class="project">
-                <h3>Dashboard interactif Power BI</h3>
-                <p>Un tableau de bord interactif pour analyser les tendances de ventes.</p>
-                <iframe title="Dashboard Power BI" width="800" height="600" src="https://app.powerbi.com/view?r=xyz" frameborder="0" allowFullScreen="true"></iframe>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email : contact@monportfolio.com</p>
-            <p>LinkedIn : <a href="https://linkedin.com/in/tonprofil" target="_blank">Mon Profil LinkedIn</a></p>
-        </section>
-    </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transformons les Données en Insights Stratégiques</h1>
+            <p>Je suis un expert en analyse de données, visualisation et science des données.</p>
+            <a href="#projects" class="btn">Voir mes Projets</a>
+            <a href="#contact" class="btn btn-outline">Contact</a>
+        </div>
+        <div class="hero-image">
+            <img src="profile.jpg" alt="Photo de profil">
+        </div>
+    </section>
     
     <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
         <p>&copy; 2025 Mon Portfolio - Data Analyst</p>
     </footer>
 </body>
