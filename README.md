@@ -1,2 +1,8 @@
-NIKELSON MICHEL
-ECONOMICS | DATA SCIENCE | BUSINESS ANALYSIS |
+# Nikelson Michel
+
+# Education
+
+# Word Experience
+
+# Projets
+
