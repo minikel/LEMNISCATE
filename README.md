@@ -1,2 +1,2 @@
-# lemniscate.com
-minikel
+NIKELSON MICHEL
+ECONOMICS | DATA SCIENCE | BUSINESS ANALYSIS |
