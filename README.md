@@ -1,4 +1,4 @@
-# Nikelson Michel
+# NIKELSON MICHEL
 
 ## Education
 
