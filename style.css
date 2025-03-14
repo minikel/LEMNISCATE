@@ -6,6 +6,7 @@ body {
     color: white;
 }
 
+
 .about {
     text-align: center;
     padding: 60px 10%;
@@ -33,8 +34,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     width: 300px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     text-align: left;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .about-card:hover {
@@ -46,6 +51,14 @@ body {
     font-size: 22px;
     color: cyan;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-card h3 i {
+    font-size: 24px;
+    color: yellow;
 }
 
 .about-card ul {
@@ -55,7 +68,25 @@ body {
 
 .about-card ul li {
     margin: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-card {
+    animation: fadeInUp 1s ease-in-out;
+}
+
 
 
 header {
