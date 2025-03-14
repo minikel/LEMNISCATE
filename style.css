@@ -156,7 +156,7 @@ body {
 }
 .articles {
     text-align: center;
-    padding: 60px 10%;
+    padding: 100px 10% 60px; /* Augmente l'espacement en haut */
     background: #111;
     border-radius: 10px;
 }
