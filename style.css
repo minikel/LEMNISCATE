@@ -76,7 +76,6 @@ body {
     padding-bottom: 5px;
     border-bottom: none; /* Supprime les lignes sous les compétences */
 }
-
 .projects {
     text-align: center;
     padding: 100px 10% 60px;
@@ -95,7 +94,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 25px; /* Réduit légèrement l’espacement entre les cartes */
     margin-top: 30px;
 }
 
@@ -104,10 +103,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    width: 350px;
+    width: 330px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     text-align: center;
-    min-height: 400px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -116,12 +115,12 @@ body {
 
 .project-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
 }
 
 .project-card img {
     width: 100%;
-    height: 180px;
+    height: 160px;
     border-radius: 8px;
     object-fit: cover;
     margin-bottom: 15px;
@@ -131,13 +130,15 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 10px;
+    gap: 8px;
     margin-top: 15px;
 }
 
 .project-buttons .btn {
     flex-grow: 1;
     text-align: center;
+    padding: 8px 12px; /* Réduit légèrement la taille des boutons */
+    font-size: 14px;
 }
 
 .modal {
