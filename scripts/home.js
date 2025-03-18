@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const parser = new DOMParser();
             const doc = parser.parseFromString(data, "text/html");
             const projects = doc.querySelectorAll(".project-card");
-            const projectContainer = document.getElementById("featured-projects");
+            const projectContainer = document.getElementById("featured-projects"); 
 
             for (let i = 0; i < Math.min(3, projects.length); i++) {
                 projectContainer.appendChild(projects[i].cloneNode(true));
