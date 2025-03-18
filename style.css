@@ -76,9 +76,10 @@ body {
     padding-bottom: 5px;
     border-bottom: none; /* Supprime les lignes sous les compétences */
 }
+
 .projects {
     text-align: center;
-    padding: 100px 10% 60px;
+    padding: 100px 10% 80px;
     background: #111;
     border-radius: 10px;
 }
@@ -86,7 +87,7 @@ body {
 .projects h2 {
     font-size: 32px;
     color: cyan;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-top: 20px;
 }
 
@@ -94,8 +95,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Réduit légèrement l’espacement entre les cartes */
-    margin-top: 30px;
+    gap: 40px; /* Augmente l’espace entre les cartes pour un meilleur alignement */
+    margin-top: 40px; /* Ajoute plus d’espace sous le titre */
 }
 
 .project-card {
@@ -103,10 +104,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    width: 350px;
+    width: 330px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     text-align: center;
-    min-height: 300px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -114,8 +115,8 @@ body {
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+    transform: scale(1.08);
+    box-shadow: 0 6px 25px rgba(0, 255, 255, 0.4);
 }
 
 .project-card img {
@@ -130,44 +131,17 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 8px;
+    gap: 10px;
     margin-top: 15px;
 }
 
 .project-buttons .btn {
     flex-grow: 1;
     text-align: center;
-    padding: 8px 12px; /* Réduit légèrement la taille des boutons */
+    padding: 8px 12px;
     font-size: 14px;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
-    text-align: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
 
 
 .articles {
