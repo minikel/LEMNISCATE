@@ -1,0 +1,20 @@
+[
+    {
+        "title": "📊 The Power of Data Visualization",
+        "description": "How effective visual representation of data can drive better business decisions.",
+        "image": "images/data-visualization.jpg",
+        "link": "articles/data-visualization.html"
+    },
+    {
+        "title": "🤖 Machine Learning for Business Forecasting",
+        "description": "Using ML models to predict market trends and improve decision-making.",
+        "image": "images/machine-learning.jpg",
+        "link": "articles/machine-learning.html"
+    },
+    {
+        "title": "📈 Advanced Excel Techniques for Analysts",
+        "description": "Boosting productivity with formulas, pivot tables, and automation.",
+        "image": "images/excel-techniques.jpg",
+        "link": "articles/excel-techniques.html"
+    }
+]
