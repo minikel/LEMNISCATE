@@ -95,7 +95,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px; /* Augmente l’espace entre les cartes pour un meilleur alignement */
+    gap: 0px; /* Augmente l’espace entre les cartes pour un meilleur alignement */
     margin-top: 40px; /* Ajoute plus d’espace sous le titre */
 }
 
