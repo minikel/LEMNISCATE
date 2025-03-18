@@ -342,10 +342,10 @@ footer {
 }
 
 .contact {
-    padding-top: 10px; /* Ajuste cet espace selon la hauteur de l'entête */
+    padding-top: 1000px; /* Ajuste cet espace selon la hauteur de l'entête */
     text-align: center;
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 40px;
     color: #fff;
 }
 
