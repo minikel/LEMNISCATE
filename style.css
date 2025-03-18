@@ -94,7 +94,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Réduit légèrement l’espacement entre les cartes */
+    gap: 30px; /* Réduit légèrement l’espacement entre les cartes */
     margin-top: 30px;
 }
 
@@ -103,15 +103,14 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    width: 330px;
+    width: 350px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     text-align: center;
-    min-height: 420px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
 }
 
 .project-card:hover {
