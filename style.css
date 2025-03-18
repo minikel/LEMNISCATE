@@ -341,12 +341,19 @@ footer {
     color: magenta;
 }
 
-.contact {
-    padding-top: 1000px; /* Ajuste cet espace selon la hauteur de l'entête */
+
+/* Ajustement du titre Contact */
+.contact h2 {
+    margin-top: 100px; /* Ajuste cette valeur si nécessaire */
+    font-size: 2rem;
     text-align: center;
+}
+
+.contact {
     text-align: center;
     padding: 50px 40px;
     color: #fff;
+    padding-top: 120px; /* Ajuste cet espace selon la hauteur de l'entête */
 }
 
 .contact-info p {
