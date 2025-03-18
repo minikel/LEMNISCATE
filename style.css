@@ -450,37 +450,40 @@ footer {
     border: 2px solid cyan;
     box-shadow: 0 0 10px cyan;
 }
-
 /* MEDIA QUERY POUR MOBILE */
 @media screen and (max-width: 768px) {
-    /* Ajuster le titre principal */
+    /* Ajustement du texte principal */
     .hero-content h1 {
         font-size: 2rem;
         text-align: center;
+        padding: 0 10px;
     }
 
-    /* Réduction de la taille de l’image de profil */
+    .hero-content p {
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* Ajustement de l'image */
     .hero-image img {
-        width: 80%;
-        max-width: 250px;
+        width: 75%;
+        max-width: 220px;
         display: block;
-        margin: auto;
+        margin: 20px auto;
+        border-radius: 50%;
     }
 
-    /* Espacement autour des boutons */
+    /* Boutons */
     .btn {
         width: 90%;
         max-width: 300px;
         margin: 10px auto;
         display: block;
-    }
-
-    /* Centrer les éléments */
-    .hero-content {
         text-align: center;
     }
 
-    /* Ajustement du menu de navigation */
+    /* Ajustement du menu */
     nav ul {
         display: flex;
         flex-direction: column;
@@ -494,7 +497,7 @@ footer {
         text-align: center;
     }
 
-    /* Ajout d’un menu hamburger si nécessaire */
+    /* Ajout d’un menu responsive (menu hamburger) */
     .menu-toggle {
         display: block;
         font-size: 2rem;
@@ -507,7 +510,7 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.9);
         position: absolute;
         top: 60px;
         width: 100%;
@@ -517,4 +520,3 @@ footer {
         display: flex;
     }
 }
-
