@@ -77,34 +77,34 @@ body {
     border-bottom: none; /* Supprime les lignes sous les compétences */
 }
 
-.projects {
+.projects, .articles {
     text-align: center;
     padding: 100px 10% 80px;
     background: #111;
     border-radius: 10px;
 }
 
-.projects h2 {
+.projects h2, .articles h2 {
     font-size: 32px;
     color: cyan;
     margin-bottom: 30px;
     padding-top: 20px;
 }
 
-.project-list {
+.project-list, .article-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0px; /* Augmente l’espace entre les cartes pour un meilleur alignement */
-    margin-top: 40px; /* Ajoute plus d’espace sous le titre */
+    gap: 25px; /* Uniformiser l’espacement */
+    margin-top: 40px;
 }
 
-.project-card {
+.project-card, .article-card {
     background: #222;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    width: 330px;
+    width: 350px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     text-align: center;
     min-height: 420px;
@@ -114,116 +114,34 @@ body {
     align-items: center;
 }
 
-.project-card:hover {
-    transform: scale(1.08);
+.project-card:hover, .article-card:hover {
+    transform: scale(1.05);
     box-shadow: 0 6px 25px rgba(0, 255, 255, 0.4);
 }
 
-.project-card img {
+.project-card img, .article-card img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     border-radius: 8px;
     object-fit: cover;
     margin-bottom: 15px;
 }
 
-.project-buttons {
+.project-buttons, .article-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     gap: 10px;
     margin-top: 15px;
 }
 
-.project-buttons .btn {
+.project-buttons .btn, .article-buttons .btn {
     flex-grow: 1;
     text-align: center;
-    padding: 8px 12px;
+    padding: 10px 15px;
     font-size: 14px;
 }
 
-
-
-.articles {
-    text-align: center;
-    padding: 100px 10% 60px; /* Augmente l'espacement en haut */
-    background: #111;
-    border-radius: 10px;
-}
-
-.articles h2 {
-    font-size: 32px;
-    color: cyan;
-    margin-bottom: 20px;
-}
-
-.article-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.article-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    width: 350px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 300px;
-    align-items: center;
-}
-
-.article-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-}
-
-.article-card h3 {
-    font-size: 20px;
-    color: cyan;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.article-card img {
-    width: 100%;
-    height: 150px;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-.article-card p {
-    font-size: 14px;
-    color: #bbb;
-    text-align: center;
-}
-
-.article-card .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border: 2px solid cyan;
-    color: cyan;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: 0.3s;
-}
-
-.article-card .btn:hover {
-    background: cyan;
-    color: black;
-    box-shadow: 0px 0px 10px cyan;
-}
 
 header {
     display: flex;
