@@ -5,19 +5,5 @@
         "image": "images/Sol cover.jpg",
         "demo": "projects/sales-forecasting.html",
         "download": "projects/files/sales-forecasting.zip"
-    },
-    {
-        "title": "📈 Power BI Sales Dashboard",
-        "description": "An interactive dashboard analyzing sales performance.",
-        "image": "images/PowerBI PARETO.jpeg",
-        "demo": "projects/powerbi-dashboard.html",
-        "download": "projects/files/powerbi-dashboard.zip"
-    },
-    {
-        "title": "🤖 Python Data Automation",
-        "description": "Automating data pipelines and reporting using Python scripts.",
-        "image": "images/EASY ETL.jpeg",
-        "demo": "projects/data-automation.html",
-        "download": "projects/files/data-automation.zip"
     }
 ]
