@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>${project.description}</p>
                     <div class="project-buttons">
                         <a href="${project.demo}" class="btn" target="_blank">View Project</a>
-                        <a href="#" class="btn order-btn">Order your own version</a>
+                        <a href="#" class="btn order-btn">Order</a>
                     </div>
                 `;
 
