@@ -547,6 +547,15 @@ footer {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   animation: slideDown 0.3s ease;
   position: relative;
+
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: slideDown 0.3s ease;
 }
 
 .modal-content input {
@@ -585,8 +594,14 @@ footer {
   font-weight: bold;
   cursor: pointer;
   z-index: 2;
-}
 
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /* Animation d’apparition */
 @keyframes slideDown {
