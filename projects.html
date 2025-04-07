@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+       <!-- Formulaire d'email caché -->
+<!-- Formulaire de commande -->
+<div id="order-form" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3>Order your own version</h3>
+    <input type="text" id="full-name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <button id="submit-order" class="btn">Submit Request</button>
+  </div>
+</div>
+
 <body>
     <header>
         <div class="logo">NM</div>
@@ -27,20 +40,7 @@
         
           <div id="project-list" class="project-list"></div>
     </section>
-    <!-- Formulaire d'email caché -->
-<!-- Formulaire de commande -->
-<div id="order-form" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h3>Order your own version</h3>
-    <input type="text" id="full-name" placeholder="Full Name" required>
-    <input type="email" id="email" placeholder="Email Address" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <button id="submit-order" class="btn">Submit Request</button>
-  </div>
-</div>
-
-
+ 
 <script src="scripts/projects.js"></script>
     <footer>
         <p>&copy; 2025 NM - LEMNISCATE</p>
