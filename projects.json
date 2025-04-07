@@ -1,8 +1,8 @@
 [
     {
-        "title": "📊 Sales Forecasting Model",
-        "description": "A predictive model using machine learning to anticipate sales trends.",
-        "image": "images/spiral_modèle.jpeg",
+        "title": "Sòl VBA APPLICATION",
+        "description": "A VBA application dedicated to sòl management",
+        "image": "images/Sol cover.jpg",
         "demo": "projects/sales-forecasting.html",
         "download": "projects/files/sales-forecasting.zip"
     },
