@@ -520,10 +520,9 @@ footer {
         display: flex;
     }
 }
-
 /* MODAL STYLE */
 .modal {
-  display: none !important;
+  display: none;
   display: none;
   display: flex;
   position: fixed;
@@ -618,4 +617,7 @@ footer {
 
 
 
-
+/* Affichage modal déclenché par JavaScript */
+.modal.active {
+  display: flex;
+}
