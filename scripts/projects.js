@@ -7,15 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 let projectCard = document.createElement("div");
                 projectCard.classList.add("project-card");
 
-                projectCard.innerHTML = `
-                    <img src="${project.image}" alt="${project.title}">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <div class="project-buttons">
-                        <a href="${project.demo}" class="btn" target="_blank">View Project</a>
-                        <button class="btn download-btn" data-file="${project.download}">Download</button>
-                    </div>
-                `;
+projectCard.innerHTML = `
+    <img src="${project.image}" alt="${project.title}">
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    <div class="project-buttons">
+        <a href="${project.demo}" class="btn" target="_blank">View Project</a>
+        <a href="order.html" class="btn order-btn" target="_blank">Order your own version</a>
+    </div>
+`;
+
 
                 projectContainer.appendChild(projectCard);
             });
