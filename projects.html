@@ -39,10 +39,45 @@
   <div class="modal-content">
     <span class="close-btn">&times;</span>
     <h3>Order your own version</h3>
-    <input type="text" id="full-name" placeholder="Full Name" required>
-    <input type="email" id="email" placeholder="Email Address" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <button id="submit-order" class="btn">Submit Request</button>
+    <!-- Formulaire avec l'URL Formspree -->
+    <form id="form-order" action="https://formspree.io/f/mgvapbzy" method="POST">
+      
+      <!-- Un champ pour le titre du projet -->
+      <input 
+        type="text" 
+        name="projectTitle" 
+        placeholder="Titre du projet" 
+        required>
+      
+      <!-- Champ nom complet -->
+      <input 
+        type="text" 
+        name="fullName" 
+        placeholder="Full Name" 
+        required>
+
+      <!-- Champ email -->
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Email Address" 
+        required>
+
+      <!-- Champ téléphone -->
+      <input 
+        type="tel" 
+        name="phone" 
+        placeholder="Phone Number" 
+        required>
+
+      <!-- Bouton d'envoi -->
+      <button 
+        id="submit-order" 
+        class="btn" 
+        type="submit">
+        Submit Request
+      </button>
+    </form>
   </div>
 </div>
-</html>
+
