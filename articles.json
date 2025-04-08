@@ -1,20 +1,9 @@
 [
     {
-        "title": "📊 The Power of Data Visualization",
-        "description": "How effective visual representation of data can drive better business decisions.",
+        "title": "Riding the Generative AI Wave: What Business Leaders Need to Know in 2025",
+        "description": "In 2025, one technology trend dominates boardroom conversations, venture capital decks, and LinkedIn feeds alike: Generative Artificial Intelligence (AI). Whether it's OpenAI’s GPT models crafting poetry better than Shakespeare or Midjourney generating art that challenges Picasso, Generative AI, particularly Large Language Models (LLMs), is transforming industries. As business and tech decision-makers, understanding and leveraging these advancements responsibly isn't just recommended—it's essential. This article dives deeply yet humorously into the practical applications, risks, and strategic insights of Generative AI.",
         "image": "images/data-visualization.jpeg",
         "link": "articles/data-visualization.html"
-    },
-    {
-        "title": "🤖 Machine Learning for Business Forecasting",
-        "description": "Using ML models to predict market trends and improve decision-making.",
-        "image": "images/machine-learning.jpg",
-        "link": "articles/machine-learning.html"
-    },
-    {
-        "title": "📈 Advanced Excel Techniques for Analysts",
-        "description": "Boosting productivity with formulas, pivot tables, and automation.",
-        "image": "images/Advanced Excel Techniques for Analysts.jpeg",
-        "link": "articles/excel-techniques.html"
     }
+ 
 ]
