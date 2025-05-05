@@ -643,16 +643,17 @@ footer {
 }
 
 /* ---------- SPÉCIFIQUE MOBILE ---------- */
- header {
-        position: relative;            /* point de référence pour l’icône */
+@media screen and (max-width: 768px) {
+
+    /* on masque le menu horizontal classique */
+    nav {
+        position: relative;     /* pour ancrer .nav-links */
     }
 
     .menu-toggle {
-        position: absolute;            /* on sort de la flex‑box */
-        top: 50%;                      /* centrage vertical */
-        right: 20px;                   /* espace depuis le bord droit */
-        transform: translateY(-50%);   /* centre parfaitement l’icône */
+        display: block;         /* icône visible */
     }
+
     .nav-links {
         display: none;          /* caché par défaut */
         flex-direction: column;
@@ -681,5 +682,19 @@ header {
 .menu-toggle {
     order: 2;          /* pousse l’icône à l’extrémité droite */
     margin-left: auto; /* au cas où, pour prendre tout l’espace restant */
+}
+
+/* --- Alignement précis de l’icône hamburger sur mobile --- */
+@media screen and (max-width: 768px) {
+    header {
+        position: relative;            /* point de référence pour l’icône */
+    }
+
+    .menu-toggle {
+        position: absolute;            /* on sort de la flex‑box */
+        top: 50%;                      /* centrage vertical */
+        right: 20px;                   /* espace depuis le bord droit */
+        transform: translateY(-50%);   /* centre parfaitement l’icône */
+    }
 }
 
