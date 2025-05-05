@@ -71,5 +71,22 @@
     </footer>
 
     <script src="scripts/home.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks   = document.querySelector(".nav-links");
+
+    /* Ouvre / ferme le menu */
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    /* Ferme lorsqu’on clique sur un lien */
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("active"));
+    });
+  });
+</script>
+
 </body>
 </html>
