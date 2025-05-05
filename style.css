@@ -633,3 +633,41 @@ footer {
 .project-card img {
   filter: brightness(0.9); /* rend l’image plus sombre pour faire ressortir le texte */
 }
+/* ---------- HAMBURGER  (en dehors des media‑queries) ---------- */
+.menu-toggle {
+    display: none;              /* masqué sur desktop */
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;              /* au‑dessus du menu */
+}
+
+/* ---------- SPÉCIFIQUE MOBILE ---------- */
+@media screen and (max-width: 768px) {
+
+    /* on masque le menu horizontal classique */
+    nav {
+        position: relative;     /* pour ancrer .nav-links */
+    }
+
+    .menu-toggle {
+        display: block;         /* icône visible */
+    }
+
+    .nav-links {
+        display: none;          /* caché par défaut */
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 60px;              /* juste sous le header (60 px) */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+    /* état déplié → classe .active ajoutée par JS */
+    .nav-links.active {
+        display: flex;
+    }
+}
