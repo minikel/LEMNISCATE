@@ -588,3 +588,43 @@ footer {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
 }
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px; /* augmente l'espacement */
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .projects h2 {
+    font-size: 1.8rem;
+  }
+
+  .projects p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .project-card {
+    margin: 20px;
+    width: 90%;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+.project-card img {
+  filter: brightness(0.9); /* rend l’image plus sombre pour faire ressortir le texte */
+}
