@@ -671,3 +671,16 @@ footer {
         display: flex;
     }
 }
+/* Positionne l’icône hamburger à droite du header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* logo à gauche, icône à droite */
+}
+
+/* On force l’icône tout à droite quand elle est visible (mobile) */
+.menu-toggle {
+    order: 2;          /* pousse l’icône à l’extrémité droite */
+    margin-left: auto; /* au cas où, pour prendre tout l’espace restant */
+}
+
