@@ -643,17 +643,16 @@ footer {
 }
 
 /* ---------- SPÉCIFIQUE MOBILE ---------- */
-@media screen and (max-width: 768px) {
-
-    /* on masque le menu horizontal classique */
-    nav {
-        position: relative;     /* pour ancrer .nav-links */
+ header {
+        position: relative;            /* point de référence pour l’icône */
     }
 
     .menu-toggle {
-        display: block;         /* icône visible */
+        position: absolute;            /* on sort de la flex‑box */
+        top: 50%;                      /* centrage vertical */
+        right: 20px;                   /* espace depuis le bord droit */
+        transform: translateY(-50%);   /* centre parfaitement l’icône */
     }
-
     .nav-links {
         display: none;          /* caché par défaut */
         flex-direction: column;
