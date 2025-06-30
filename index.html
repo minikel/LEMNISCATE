@@ -3,90 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikelson M. Lemniscate</title>
+    <title>Nikelson Michel | Portfolio Data & Business Intelligence</title>
+    <meta name="description" content="Portfolio de Nikelson Michel, expert en Ingénierie des Données, Recherche Quantitative, Visualisation de Données, Développement BI, et MBA en Business Analytics.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head> 
+</head>
 <body>
-<header>
-  <div class="logo">Nikelson Michel | Data Solutions </div>
 
-  <!-- Icône hamburger (visible seulement sur mobile) -->
-  <i class="fas fa-bars menu-toggle"></i>
-
-  <!-- Menu de navigation -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-    
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Data Engineering | Quantitative Research | Visual Storytelling </h1>
-            <p>Let's transform data into strategic decisions with intelligence and creativity</p>
-            <a href="projects.html" class="btn">See my Projects</a>
-            <a href="contact.html" class="btn btn-outline">Contact</a>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">Nikelson Michel | Data Solutions</a>
         </div>
-        <div class="hero-image">
-            <img src="Portrait Veste Bleu chemise blanche v4.jpg" alt="Photo de profil">
-        </div>
-    </section>
 
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <p>Explore my portfolio of data analysis, machine learning, and visualization projects.</p>
-        <div id="featured-projects" class="project-list"></div>
-        <a href="projects.html" class="btn">See All Projects</a>
-    </section>
-    
-    <section id="articles" class="articles">
-        <h2>My Articles</h2>
-        <p>Discover insights, case studies, and deep dives into data analytics, visualization, and business intelligence.</p>
-        <div id="featured-articles" class="article-list"></div>
-        <a href="articles.html" class="btn">See All Articles</a>
-    </section>
-    
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-               <div class="social-icons">
-            <a href="https://www.linkedin.com/in/minikel/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.x.com/Minikel01" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/michelnikelson/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/leminikel" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@minikel01" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/minikel" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-    </section>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
 
-    <footer>
-        <p>&copy; 2025 NM - LEMNISCATE</p>
+        <nav class="main-nav" aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="highlight-mba">MBA Business Analytics</span><br>
+                    Data Engineering | Quantitative Research | Visual Storytelling
+                </h1>
+                <p class="hero-subtitle">
+                    Transformer les données brutes en décisions stratégiques éclairées, avec intelligence et créativité.
+                </p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">Voir mes Projets</a>
+                    <a href="contact.html" class="btn btn-secondary">Contactez-moi</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Portrait Veste Bleu chemise blanche v4.jpg" alt="Photo de profil de Nikelson Michel">
+            </div>
+        </section>
+
+        <section id="about-teaser" class="section-padding">
+            <div class="container">
+                <h2>À Propos de Nikelson Michel</h2>
+                <p>
+                    Fort d'une MBA en Business Analytics et d'une expertise technique approfondie, je suis un professionnel de la donnée passionné par la transformation d'informations complexes en stratégies claires. Maîtrisant l'intégralité du cycle de vie des données – de l'architecture et la création de pipelines ETL, à la recherche quantitative avancée, jusqu'à la visualisation percutante – je m'engage à fournir des solutions data qui génèrent un impact business mesurable.
+                </p>
+                <a href="about.html" class="btn btn-tertiary">En Savoir Plus</a>
+            </div>
+        </section>
+
+        <section id="featured-projects" class="section-padding">
+            <div class="container">
+                <h2>Projets Vedettes</h2>
+                <p>Explorez une sélection de mes travaux en ingénierie des données, modélisation quantitative et visualisation interactive.</p>
+                <div class="project-list" aria-live="polite">
+                    </div>
+                <div class="text-center">
+                    <a href="projects.html" class="btn btn-primary-outline">Voir Tous les Projets</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="featured-articles" class="section-padding bg-dark-alt">
+            <div class="container">
+                <h2>Articles Récents</h2>
+                <p>Découvrez mes réflexions, études de cas et approfondissements sur l'analytique des données et l'intelligence d'affaires.</p>
+                <div class="article-list" aria-live="polite">
+                    </div>
+                <div class="text-center">
+                    <a href="articles.html" class="btn btn-secondary-outline">Lire Tous les Articles</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-cta" class="section-padding">
+            <div class="container text-center">
+                <h2>Envie de collaborer ?</h2>
+                <p>Que ce soit pour un projet, une discussion ou une opportunité, n'hésitez pas à me contacter.</p>
+                <a href="contact.html" class="btn btn-primary">Prendre Contact</a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/minikel/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.x.com/Minikel01" target="_blank" rel="noopener noreferrer" aria-label="Profil X (Twitter)"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/michelnikelson/" target="_blank" rel="noopener noreferrer" aria-label="Profil Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/leminikel" target="_blank" rel="noopener noreferrer" aria-label="Profil Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@VotreChaineYouTube" target="_blank" rel="noopener noreferrer" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/minikel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p>&copy; 2025 Nikelson Michel - Tous droits réservés.</p>
+            <p><a href="#top" class="back-to-top">Retour en haut de page</a></p>
+        </div>
     </footer>
 
-    <script src="scripts/home.js"></script>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks   = document.querySelector(".nav-links");
+    <script src="scripts/main.js"></script> <script src="scripts/home.js"></script> <script>
+        // Ce script JS est déplacé dans 'scripts/main.js' pour une meilleure organisation
+        // et sera appelé à partir de ce fichier centralisé.
+        // Assurez-vous que scripts/main.js contient le code suivant :
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
 
-    /* Ouvre / ferme le menu */
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
+            if (menuToggle && navLinks) {
+                /* Ouvre / ferme le menu */
+                menuToggle.addEventListener("click", () => {
+                    navLinks.classList.toggle("active");
+                });
 
-    /* Ferme lorsqu’on clique sur un lien */
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => navLinks.classList.remove("active"));
-    });
-  });
-</script>
-
+                /* Ferme lorsqu’on clique sur un lien (pour les appareils mobiles) */
+                navLinks.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", () => navLinks.classList.remove("active"));
+                });
+            }
+        });
+    </script>
 </body>
 </html>
