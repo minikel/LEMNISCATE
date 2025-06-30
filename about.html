@@ -3,77 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Nikelson M.</title>
+    <title>À Propos - Nikelson Michel | Portfolio Data & Business Intelligence</title>
+    <meta name="description" content="Découvrez le parcours de Nikelson Michel, expert en Ingénierie des Données, Recherche Quantitative, Visualisation de Données, Développement BI, et titulaire d'un MBA en Business Analytics.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<header>
-  <div class="logo">NM</div>
 
-  <!-- Icône hamburger (visible seulement sur mobile) -->
-  <i class="fas fa-bars menu-toggle"></i>
-
-  <!-- Menu de navigation -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-    
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Passionate about data analysis, data science, and advanced visualization, I deliver accurate and actionable insights using cutting-edge tools like Python, Power BI, and Tableau.</p>
-        
-        <div class="about-sections">
-            <div class="about-card">
-                <h3>🎓 Education</h3>
-                <p>Bachelor of Economics</p>
-                <p>MBA Business Analytics</p>
-                <p>IBM Data Engineer Professional Certificate</p>
-            </div>
-            <div class="about-card">
-                <h3>💡 Skills</h3>
-                <ul>
-                    <li>Data analysis and visualization</li>
-                    <li>Python, SQL, VBA</li>
-                    <li>Tableau, Power BI, Advanced Excel</li>
-                    <li>Statistics and Machine Learning</li>
-                </ul>
-            </div>
-            <div class="about-card">
-                <h3>💼 Professional Experience</h3>
-                <p>Data Analyst | Data Scientist | Data Engineer</p>
-                <p>Worked on projects involving data modeling, automation, and optimization of business decisions.</p>
-            </div>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">Nikelson Michel | Data Solutions</a>
         </div>
-    </section>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-nav" aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html" class="active">À Propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
-    <footer>
-        <p>&copy; 2025 NM - LEMNISCATE</p>
+    <main>
+        <section id="about-hero" class="hero small-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">À Propos de Nikelson Michel</h1>
+                <p class="hero-subtitle">
+                    Mon parcours, mes compétences et ma passion pour la donnée au service de la décision stratégique.
+                </p>
+            </div>
+        </section>
+
+        <section id="introduction" class="section-padding container">
+            <div class="about-intro">
+                <img src="Portrait Veste Bleu chemise blanche v4.jpg" alt="Photo de profil de Nikelson Michel" class="about-profile-img">
+                <p>
+                    Fort d'une **MBA spécialisée en Business Analytics** et d'une solide expertise technique, je suis un professionnel de la donnée passionné par la transformation d'informations complexes en stratégies claires et actionnables. Mon parcours m'a permis de développer une vision holistique, couvrant l'intégralité du cycle de vie des données.
+                </p>
+                <p>
+                    Mon engagement est de ne pas seulement analyser les données, mais de comprendre les implications stratégiques de chaque insight pour délivrer des solutions qui génèrent un **impact business mesurable** et un retour sur investissement tangible pour les entreprises.
+                </p>
+            </div>
+        </section>
+
+        <section id="expertise" class="section-padding bg-dark-alt container">
+            <h2>Mes Domaines d'Expertise</h2>
+            <div class="about-sections">
+                <div class="about-card">
+                    <h3><i class="fas fa-cubes"></i> Ingénierie des Données & Architecture</h3>
+                    <ul>
+                        <li>Conception et optimisation d'architectures de données (Data Warehouses, Data Lakes, Lakehouse).</li>
+                        <li>Développement de pipelines ETL/ELT robustes et automatisés (SQL, Python, Airflow).</li>
+                        <li>Modélisation de données (relationnelle, dimensionnelle).</li>
+                        <li>Gestion de la qualité et gouvernance des données.</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-chart-line"></i> Recherche Quantitative & Analyse Avancée</h3>
+                    <ul>
+                        <li>Modélisation statistique et économétrie.</li>
+                        <li>Analyse prédictive et Machine Learning (Python, R).</li>
+                        <li>Développement d'indicateurs de performance clés (KPIs) et de métriques business.</li>
+                        <li>Optimisation et simulation de scénarios business.</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-chart-pie"></i> Visualisation de Données & BI</h3>
+                    <ul>
+                        <li>Création de tableaux de bord interactifs (Power BI, Tableau, Shiny).</li>
+                        <li>Storytelling de données pour une communication claire et percutante.</li>
+                        <li>Conception d'infographies et rapports dynamiques.</li>
+                        <li>Design UX/UI appliqué à la présentation de données.</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-briefcase"></i> Stratégie & Impact Business (MBA)</h3>
+                    <ul>
+                        <li>Traduction des problématiques métier en solutions data concrètes.</li>
+                        <li>Identification d'opportunités d'optimisation et de croissance.</li>
+                        <li>Mesure de l'impact financier et stratégique des initiatives data.</li>
+                        <li>Leadership et communication inter-fonctionnelle.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills-tech" class="section-padding container">
+            <h2>Compétences Techniques</h2>
+            <div class="about-sections">
+                <div class="about-card">
+                    <h3><i class="fas fa-code"></i> Langages & Frameworks</h3>
+                    <ul>
+                        <li>Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)</li>
+                        <li>SQL (PostgreSQL, MySQL, SQL Server)</li>
+                        <li>R (ggplot2, dplyr, Shiny)</li>
+                        <li>VBA (Excel Automation)</li>
+                        <li>Apache Airflow</li>
+                        <li>dbt (Data Build Tool)</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-database"></i> Bases de Données & Cloud</h3>
+                    <ul>
+                        <li>Data Warehouses (Snowflake, BigQuery, Redshift)</li>
+                        <li>Bases de données relationnelles et NoSQL</li>
+                        <li>Services Cloud (AWS S3, Azure Data Lake, GCP Cloud Storage)</li>
+                        <li>ELT/ETL Tools (AWS Glue, Azure Data Factory, Talend)</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-chart-bar"></i> Outils BI & Visualisation</h3>
+                    <ul>
+                        <li>Power BI (DAX, Power Query)</li>
+                        <li>Tableau Desktop & Server</li>
+                        <li>Advanced Excel & Google Sheets</li>
+                        <li>Streamlit / Dash</li>
+                        <li>Looker Studio (ex-Google Data Studio)</li>
+                    </ul>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-brain"></i> Modélisation & Statistiques</h3>
+                    <ul>
+                        <li>Régression (linéaire, logistique)</li>
+                        <li>Classification (Arbres de décision, SVM, Forêts aléatoires)</li>
+                        <li>Clustering (K-means, Hiérarchique)</li>
+                        <li>Séries temporelles</li>
+                        <li>Tests d'hypothèses, A/B Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-cta" class="section-padding">
+            <div class="container text-center">
+                <h2>Prêt à donner vie à vos données ?</h2>
+                <p>N'hésitez pas à me contacter pour discuter de vos projets et de la manière dont je peux vous aider à atteindre vos objectifs business.</p>
+                <a href="contact.html" class="btn btn-primary">Prendre Contact</a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/minikel/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.x.com/Minikel01" target="_blank" rel="noopener noreferrer" aria-label="Profil X (Twitter)"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/michelnikelson/" target="_blank" rel="noopener noreferrer" aria-label="Profil Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/leminikel" target="_blank" rel="noopener noreferrer" aria-label="Profil Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@VotreChaineYouTube" target="_blank" rel="noopener noreferrer" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/minikel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p>© 2025 Nikelson Michel - Tous droits réservés.</p>
+            <p><a href="#top" class="back-to-top">Retour en haut de page</a></p>
+        </div>
     </footer>
-    <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks   = document.querySelector(".nav-links");
 
-    /* Ouvre / ferme le menu */
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    /* Ferme lorsqu’on clique sur un lien */
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => navLinks.classList.remove("active"));
-    });
-  });
-</script>
-
+    <script src="scripts/main.js"></script>
 </body>
 </html>
