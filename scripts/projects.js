@@ -1,82 +1,78 @@
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("projects.json")
-        .then(response => response.json())
-        .then(data => {
-            let projectContainer = document.getElementById("project-list");
+// scripts/projects.js
 
-            data.forEach(project => {
-                let projectCard = document.createElement("div");
-                projectCard.classList.add("project-card");
+document.addEventListener("DOMContentLoaded", function() {
+    // ----------------------------------------------------
+    // GESTION DES PROJETS (Chargement depuis projects.json)
+    // ----------------------------------------------------
+    const projectListContainer = document.getElementById("project-list");
 
-                projectCard.innerHTML = `
-                    <img src="${project.image}" alt="${project.title}">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-                    <div class="project-buttons">
-                        <a href="${project.demo}" class="btn" target="_blank">View Project</a>
-                        <a href="#" class="btn order-btn">Order</a>
-                    </div>
-                `;
-
-                projectContainer.appendChild(projectCard);
-            });
-
-            // Récupération des éléments du formulaire
-            let orderModal = document.getElementById("order-form");
-            let closeOrderBtn = orderModal.querySelector(".close-btn");
-            let fullNameInput = document.getElementById("full-name");
-            let emailInput = document.getElementById("email");
-            let phoneInput = document.getElementById("phone");
-            let submitOrder = document.getElementById("submit-order");
-
-            let currentProjectTitle = "";
-
-            // Associer chaque bouton Order au bon projet
-            document.querySelectorAll(".order-btn").forEach(button => {
-                button.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    let card = this.closest(".project-card");
-                    currentProjectTitle = card.querySelector("h3").textContent;
-                    orderModal.style.display = "block";
-                });
-            });
-
-            // Fermer la fenêtre modale
-            closeOrderBtn.addEventListener("click", () => {
-                orderModal.style.display = "none";
-            });
-
-            // Gestion de la soumission du formulaire
-            submitOrder.addEventListener("click", function () {
-                let name = fullNameInput.value.trim();
-                let email = emailInput.value.trim();
-                let phone = phoneInput.value.trim();
-
-                if (name && email && phone) {
-                    orderModal.style.display = "none";
-
-                    let message = `
-Nouvelle demande de service reçue :
-
-Projet : ${currentProjectTitle}
-Nom complet : ${name}
-Email : ${email}
-Téléphone : ${phone}
-`;
-
-                    // Simule l’envoi d’email via mailto
-                    window.location.href = `mailto:nikelsonmichel?subject=Demande%20de%20service%20pour%20${encodeURIComponent(currentProjectTitle)}&body=${encodeURIComponent(message)}`;
-
-                    alert("Nous avons reçu votre demande et nous vous repondrons dans moins de 60 minutes. Un grand Merci !");
-
-                    // Réinitialiser les champs
-                    fullNameInput.value = "";
-                    emailInput.value = "";
-                    phoneInput.value = "";
-                } else {
-                    alert("Merci de remplir tous les champs.");
+    if (projectListContainer) { // S'exécute seulement si #project-list existe
+        fetch("projects.json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
+                return response.json();
+            })
+            .then(projectsData => {
+                projectListContainer.innerHTML = ''; // Nettoyer avant d'ajouter
+
+                projectsData.forEach(project => {
+                    const projectCard = document.createElement("div");
+                    projectCard.classList.add("project-card");
+
+                    let buttonsHtml = `
+                        <div class="project-buttons">
+                            ${project.githubLink ? `<a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>` : ''}
+                    `;
+                    const demoLink = project.liveDemoLink || project.demo;
+                    if (demoLink && demoLink !== "#") {
+                         buttonsHtml += `
+                            <a href="${demoLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> Démo Live
+                            </a>
+                         `;
+                    }
+
+                    if (project.orderable) {
+                        buttonsHtml += `
+                            <button class="btn btn-download order-project-btn" data-project-title="${project.title}">
+                                <i class="fas fa-shopping-cart"></i> Commander
+                            </button>
+                        `;
+                    }
+                    buttonsHtml += `</div>`;
+
+
+                    projectCard.innerHTML = `
+                        <img src="${project.image}" alt="Image du projet : ${project.title}">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="project-tags">
+                            ${project.tags && project.tags.length > 0 ? 
+                                project.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
+                        </div>
+                        ${buttonsHtml}
+                    `;
+                    projectListContainer.appendChild(projectCard);
+                });
+
+                // Attacher les écouteurs d'événements aux boutons "Commander" APRÈS que les projets soient rendus
+                projectListContainer.querySelectorAll(".order-project-btn").forEach(button => {
+                    button.addEventListener("click", function() {
+                        const projectTitle = this.dataset.projectTitle;
+                        // Utilise la fonction globale définie dans main.js
+                        if (window.openOrderModal) { 
+                            window.openOrderModal(projectTitle);
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error("Erreur lors du chargement des projets:", error);
+                projectListContainer.innerHTML = `<p class="error-message">Impossible de charger les projets pour le moment. Veuillez réessayer plus tard.</p>`;
             });
-        })
-        .catch(error => console.error("Error loading projects:", error));
+    }
 });
