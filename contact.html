@@ -1,149 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me - Nikelson M.</title>
-  <link rel="stylesheet" href="style.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-Moi - Nikelson Michel | Consultant Data & BI</title>
+    <meta name="description" content="Contactez Nikelson Michel pour vos projets d'analyse de données, machine learning, visualisation ou business intelligence. Discutons de vos besoins.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="logo">NM</div>
 
-  <!-- Icône hamburger (visible seulement sur mobile) -->
-  <i class="fas fa-bars menu-toggle"></i>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">Nikelson Michel | Data Solutions</a>
+        </div>
 
-  <!-- Menu de navigation -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
 
+        <nav class="main-nav" aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out for collaborations, inquiries, or just to connect!</p>
-    
-    <div class="contact-info">
-      <p>📧 Email: 
-        <a href="mailto:nikelsonmichel@gmail.com">nikelsonmichel@gmail.com</a>
-      </p>
-      <p>📍 Location: Laval, Canada</p>
-    </div>
-    
-    <div class="social-icons">
-      <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
+    <main>
+        <section id="contact-hero" class="hero small-hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Entrons en Contact</h1>
+                <p class="hero-subtitle">
+                    N'hésitez pas à me joindre pour des collaborations, des questions, ou simplement pour échanger.
+                </p>
+            </div>
+        </section>
 
-    <!-- Formulaire de contact amélioré -->
-    <!-- Remplacez l’URL Formspree ci-dessous par la vôtre si besoin -->
-    <form
-      id="contact-form"
-      class="contact-form"
-      action="https://formspree.io/f/mgvapbzy"
-      method="POST"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-      >
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required
-      >
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        required
-      ></textarea>
-      <button
-        type="submit"
-        class="btn"
-      >
-        Send Message
-      </button>
-    </form>
-  </section>
+        <section id="contact-info-section" class="section-padding container">
+            <h2>Mes Coordonnées</h2>
+            <p>Je suis disponible pour discuter de vos projets et vous apporter des solutions sur mesure.</p>
+            
+            <div class="contact-details">
+                <p class="contact-item">
+                    <i class="fas fa-envelope"></i> Email: 
+                    <a href="mailto:nikelsonmichel@gmail.com" aria-label="Envoyer un email à Nikelson Michel">nikelsonmichel@gmail.com</a>
+                </p>
+                <p class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> Localisation: Terrebonne, Québec, Canada
+                </p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/minikel/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.x.com/Minikel01" target="_blank" rel="noopener noreferrer" aria-label="Profil X (Twitter)"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/michelnikelson/" target="_blank" rel="noopener noreferrer" aria-label="Profil Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/leminikel" target="_blank" rel="noopener noreferrer" aria-label="Profil Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="http://www.youtube.com/@minikel" target="_blank" rel="noopener noreferrer" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/minikel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
+            </div>
 
-  <footer>
-    <p>&copy; 2025 NM - LEMNISCATE</p>
-  </footer>
+            <h2 style="margin-top: 40px;">Envoyez-moi un message</h2>
+            <form
+                id="contact-form"
+                class="contact-form"
+                action="https://formspree.io/f/mgvapbzy"
+                method="POST"
+            >
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Votre Nom"
+                    required
+                    aria-label="Votre Nom"
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Votre Email"
+                    required
+                    aria-label="Votre Email"
+                />
+                <textarea
+                    name="message"
+                    placeholder="Votre Message"
+                    required
+                    aria-label="Votre Message"
+                ></textarea>
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Envoyer le Message
+                </button>
+            </form>
+        </section>
+    </main>
 
-  <!-- Script pour intercepter la soumission du formulaire et afficher un message de succès -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const contactForm = document.getElementById("contact-form");
+    <footer class="main-footer">
+        <div class="container text-center">
+            <p>© 2025 Nikelson Michel - Tous droits réservés.</p>
+            <p><a href="#top" class="back-to-top">Retour en haut de page</a></p>
+        </div>
+    </footer>
 
-      contactForm.addEventListener("submit", function(e) {
-        e.preventDefault(); // Empêche la soumission standard (redirection)
-
-        const formData = new FormData(contactForm);
-
-        fetch(contactForm.action, {
-          method: "POST",
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        })
-        .then(response => {
-          if (response.ok) {
-            // Succès : on affiche un message et on réinitialise le formulaire
-            alert("Votre message a bien été envoyé ! Merci, nous vous répondrons sous peu.");
-            contactForm.reset();
-          } else {
-            // Erreur côté Formspree
-            response.json().then(data => {
-              if (data.errors) {
-                alert(data.errors.map(error => error.message).join(", "));
-              } else {
-                alert("Une erreur est survenue, veuillez réessayer plus tard.");
-              }
-            });
-          }
-        })
-        .catch(error => {
-          console.error("Erreur:", error);
-          alert("Impossible d’envoyer le message. Veuillez réessayer plus tard.");
-        });
-      });
-    });
-  </script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks   = document.querySelector(".nav-links");
-
-    /* Ouvre / ferme le menu */
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    /* Ferme lorsqu’on clique sur un lien */
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => navLinks.classList.remove("active"));
-    });
-  });
-</script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/contact.js"></script>
 
 </body>
 </html>
-
