@@ -802,10 +802,6 @@ section p {
     color: var(--clr-text-medium);
 }
 
-/* ------------------------------------------- */
-/* A propos de moi     */
-/* ------------------------------------------- */
-
 .hero.small-hero {
     min-height: 40vh; /* Moins haut qu'un hero plein écran */
     padding: 80px 5%; /* Ajustement du padding */
