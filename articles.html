@@ -8,8 +8,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    
-    </head>
+</head>
 <body>
 
     <header class="main-header">
@@ -42,10 +41,20 @@
             </div>
         </section>
 
-        <section id="articles" class="section-padding container">
+        <section id="articles-section" class="section-padding container">
             <h2>Derniers Insights</h2>
             <p>Mon blog est un espace pour partager des connaissances, des techniques et des perspectives sur le monde de la donnée.</p>
             
+            <div class="category-tabs">
+                <button class="tab-button active" data-category="all">Tous les Articles</button>
+                <button class="tab-button" data-category="Data Engineering">Data Engineering</button>
+                <button class="tab-button" data-category="Quantitative Research">Quantitative Research</button>
+                <button class="tab-button" data-category="Visual Storytelling">Visual Storytelling</button>
+                <button class="tab-button" data-category="Data Analysis">Data Analysis</button>
+                <button class="tab-button" data-category="Machine Learning">Machine Learning</button>
+                <button class="tab-button" data-category="Business Intelligence">Business Intelligence</button>
+            </div>
+
             <div id="article-list" class="article-list">
                 </div>
 
@@ -61,7 +70,7 @@
                     <a href="https://www.x.com/Minikel01" target="_blank" rel="noopener noreferrer" aria-label="Profil X (Twitter)"><i class="fab fa-twitter"></i></a>
                     <a href="https://www.instagram.com/michelnikelson/" target="_blank" rel="noopener noreferrer" aria-label="Profil Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://www.facebook.com/leminikel" target="_blank" rel="noopener noreferrer" aria-label="Profil Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/@minikel01" target="_blank" rel="noopener noreferrer" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.youtube.com/@VotreChaineYouTube" target="_blank" rel="noopener noreferrer" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="https://github.com/minikel" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
@@ -70,7 +79,7 @@
     
     <footer class="main-footer">
         <div class="container text-center">
-            <p>© 2025 Nikelson Michel - Tous droits réservés.</p>
+            <p>&copy; 2025 Nikelson Michel - Tous droits réservés.</p>
             <p><a href="#top" class="back-to-top">Retour en haut de page</a></p>
         </div>
     </footer>
