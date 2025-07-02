@@ -13,7 +13,7 @@
         "link": "articles/construire-pipeline-donnees.html", 
         "date": "30 Juin 2025",
         "category": "Data Engineering, Python, Automation"
-    }
+    },
 
     {
     "id": 5, "title": "Apache Airflow pour les Nuls : Construisez Votre Premier Pipeline de Données (ETL) Sans Coder !",
