@@ -14,5 +14,14 @@
         "date": "30 Juin 2025",
         "category": "Data Engineering, Python, Automation"
     }
+
+    {
+    "id": 5, "title": "Apache Airflow pour les Nuls : Construisez Votre Premier Pipeline de Données (ETL) Sans Coder !",
+    "description": "Découvrez Apache Airflow et apprenez à construire votre tout premier pipeline de données (ETL) pour automatiser vos tâches, même sans expérience en programmation.",
+    "image": "images/article-airflow-nuls.jpg", 
+    "link": "articles/apache-airflow-pour-les-nuls.html", 
+    "date": "02 Juillet 2025",
+    "category": "Data Engineering, Automation, Débutant"
+}
  
 ]
