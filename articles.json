@@ -1,11 +1,4 @@
 [
-    {
-        "title": "Riding the Generative AI Wave",
-        "description": "What Business Leaders Need to Know in 2025 ",
-        "image": "images/Generative AI.png",
-        "link": "articles/Formatted_Generative_AI_Article.html"
-    },
-
         {
         "id": 4,  "title": "Construire un pipeline de données robuste avec Python et Apache Airflow",
         "description": "Découvrez les 5 étapes essentielles pour construire un pipeline de données robuste et scalable avec Python et Apache Airflow, de la planification à l’orchestration, dans un style simple et engageant.",
