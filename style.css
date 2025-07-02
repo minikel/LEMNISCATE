@@ -890,3 +890,145 @@ section p {
     white-space: nowrap; /* Empêche le texte de se couper */
     border: 1px solid rgba(0, 255, 255, 0.3); /* Bordure fine */
 }
+/* Styles pour les onglets de catégorie */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur petits écrans */
+    justify-content: center;
+    gap: 10px; /* Espace entre les boutons */
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: var(--color-background-alt); /* Couleur de fond des onglets */
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.tab-button {
+    background-color: var(--color-light); /* Couleur de fond par défaut des boutons */
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    border-radius: 25px; /* Coins arrondis pour les pilules */
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Empêche le texte du bouton de se couper */
+}
+
+.tab-button:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary);
+    transform: translateY(-2px); /* Petit effet de soulèvement */
+}
+
+.tab-button.active {
+    background-color: var(--color-primary); /* Couleur du bouton actif */
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    font-weight: 600;
+    box-shadow: var(--shadow-primary);
+}
+
+/* Ajustements pour la liste d'articles si nécessaire */
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px; /* Espace au-dessus de la liste */
+}
+
+.article-card {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px; /* Hauteur fixe pour les images des cartes */
+    object-fit: cover; /* Recadre l'image pour couvrir l'espace */
+}
+
+.article-card .article-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permet à l'info de prendre l'espace restant */
+}
+
+.article-card .article-category {
+    display: inline-block;
+    background-color: var(--color-secondary-light);
+    color: var(--color-secondary-dark);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.article-card h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--color-heading);
+}
+
+.article-card p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: var(--color-text);
+    flex-grow: 1; /* Permet à la description de prendre l'espace */
+}
+
+.article-card .article-meta {
+    font-size: 0.85em;
+    color: var(--color-text-light);
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.article-card .article-meta i {
+    color: var(--color-primary);
+}
+
+.article-card .btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.article-card .btn-secondary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+    .category-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tab-button {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        max-width: 250px; /* Limite la largeur pour ne pas être trop large */
+    }
+}
