@@ -1,23 +1,50 @@
 /* ------------------------------------------- */
-/* 1. VARIABLES GLOBALES ET RÉINITIALISATION  */
+/* 1. VARIABLES GLOBALES ET RÉINITIALISATION   */
 /* ------------------------------------------- */
 :root {
-    /* Couleurs principales */
-    --clr-dark-bg: #0f0f0f;
-    --clr-dark-alt: #111111;
-    --clr-card-bg: #222222;
-    --clr-text-light: #ffffff;
-    --clr-text-medium: #bbb;
-    --clr-accent-cyan: #00FFFF; /* Cyan */
-    --clr-accent-magenta: #FF00FF; /* Magenta */
-    --clr-accent-green: #00ffcc; /* Vert aqua pour hover */
-    --clr-accent-yellow: #FFFF00; /* Jaune pour icônes */
+    /* Couleurs principales (harmonisé et renommé pour cohérence) */
+    --color-dark-bg: #0f0f0f; /* Couleur de fond principale */
+    --color-dark-alt: #1a1a1a; /* Fond alternatif, souvent pour header/footer/sections spécifiques */
+    --color-card-bg: #222222; /* Fond des cartes projets/articles */
+    --color-light: #ffffff; /* Pour les éléments clairs */
+    --color-text-light: #ffffff; /* Texte clair (blanc) */
+    --color-text-medium: #bbb; /* Texte secondaire, descriptions */
+    --color-text-dark: #333; /* Texte sombre (utilisé si fond clair, ex: boutons .tab-button) */
+    --color-heading: var(--color-text-light); /* Couleur par défaut des titres */
+
+    --color-primary: #00FFFF; /* Cyan - Accent principal */
+    --color-primary-light: rgba(0, 255, 255, 0.2); /* Cyan léger */
+    --color-primary-dark: #00cccc; /* Cyan plus sombre pour hover/focus */
+
+    --color-secondary: #FF00FF; /* Magenta - Accent secondaire */
+    --color-secondary-light: rgba(255, 0, 255, 0.2); /* Magenta léger */
+    --color-secondary-dark: #cc00cc; /* Magenta plus sombre */
+
+    --color-accent-green: #00ffcc; /* Vert Aqua - Accent tertiaire */
+    --color-accent-yellow: #FFFF00; /* Jaune - Pour les icônes */
+
+    --color-border: rgba(255, 255, 255, 0.1); /* Bordures générales */
+    --color-border-subtle: rgba(255, 255, 255, 0.05); /* Bordures très subtiles */
+
 
     /* Espacement */
     --padding-section-lg: 100px 10%;
     --padding-section-md: 80px 5%;
     --padding-section-sm: 50px 20px;
-    --header-height: 80px; /* Ajusté pour laisser plus d'espace */
+    --header-height: 80px;
+
+    /* Rayons de bordure */
+    --border-radius-small: 8px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 15px; /* Pour les cartes */
+    --border-radius-pill: 50px; /* Pour les boutons pilules */
+
+    /* Ombres (unifiées) */
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 5px 20px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 30px rgba(0, 255, 255, 0.3), 0 8px 30px rgba(255, 0, 255, 0.2);
+    --shadow-primary: 0 4px 15px rgba(0, 255, 255, 0.4); /* Pour boutons primaires */
+    --shadow-secondary: 0 4px 10px rgba(0, 255, 255, 0.2); /* Pour boutons secondaires */
 }
 
 /* Réinitialisation de base */
@@ -25,10 +52,17 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: var(--clr-dark-bg);
-    color: var(--clr-text-light);
+    background: var(--color-dark-bg);
+    color: var(--color-text-light);
     line-height: 1.6;
     overflow-x: hidden; /* Empêche le défilement horizontal non désiré */
+}
+
+/* Styles des titres (généraux) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Peut être une variable --font-heading si vous en avez une */
+    color: var(--color-heading); /* Couleur par défaut des titres */
+    line-height: 1.3;
 }
 
 /* Styles pour le conteneur général des sections */
@@ -44,7 +78,7 @@ body {
     text-align: center;
 }
 .bg-dark-alt {
-    background: var(--clr-dark-alt);
+    background: var(--color-dark-alt);
 }
 .text-center {
     text-align: center;
@@ -52,41 +86,41 @@ body {
 
 
 /* ------------------------------------------- */
-/* 2. EN-TÊTE (HEADER) ET NAVIGATION          */
+/* 2. EN-TÊTE (HEADER) ET NAVIGATION           */
 /* ------------------------------------------- */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: var(--clr-dark-alt);
+    background: var(--color-dark-alt);
     position: fixed;
     width: 100%;
     top: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Ombre plus discrète */
+    box-shadow: var(--shadow-light);
     z-index: 1000;
     transition: background 0.3s ease-in-out;
     height: var(--header-height);
 }
 
 .main-header.scrolled {
-    background: rgba(17, 17, 17, 0.95); /* Plus opaque */
-    backdrop-filter: blur(8px); /* Blur plus prononcé */
+    background: rgba(26, 26, 26, 0.95); /* Plus opaque (utilise var(--color-dark-alt)) */
+    backdrop-filter: blur(8px);
 }
 
 .logo {
-    font-size: 24px; /* Légèrement plus grand */
+    font-size: 24px;
     font-weight: bold;
-    color: var(--clr-accent-cyan);
+    color: var(--color-primary);
     flex-shrink: 0;
 }
 .logo a {
     text-decoration: none;
-    color: inherit; /* Hérite la couleur du parent */
+    color: inherit;
     transition: color 0.3s ease;
 }
 .logo a:hover {
-    color: var(--clr-accent-green); /* Nouvelle couleur hover pour le logo */
+    color: var(--color-accent-green);
 }
 
 /* Navigation principale */
@@ -99,25 +133,25 @@ body {
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* Plus d'espace entre les liens */
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
 .main-nav a {
     text-decoration: none;
-    color: var(--clr-text-light);
-    font-size: 17px; /* Légèrement plus grand */
-    font-weight: 500; /* Moins gras */
+    color: var(--color-text-light);
+    font-size: 17px;
+    font-weight: 500;
     padding: 8px 12px;
-    position: relative; /* Pour l'effet de soulignement */
+    position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: var(--clr-accent-cyan);
-    transform: translateY(-2px); /* Léger effet de soulèvement */
+    color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
 /* Effet de soulignement moderne */
@@ -126,7 +160,7 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--clr-accent-cyan), var(--clr-accent-magenta));
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
@@ -140,9 +174,9 @@ body {
 
 /* Icône hamburger pour mobile */
 .menu-toggle {
-    display: none; /* Masqué par défaut sur desktop */
-    font-size: 30px; /* Taille plus grande */
-    color: var(--clr-text-light);
+    display: none;
+    font-size: 30px;
+    color: var(--color-text-light);
     cursor: pointer;
     background: none;
     border: none;
@@ -152,179 +186,201 @@ body {
 
 
 /* ------------------------------------------- */
-/* 3. SECTION HÉRO (HERO)                     */
+/* 3. SECTION HÉRO (HERO)                      */
 /* ------------------------------------------- */
 .hero {
     display: flex;
-    flex-direction: row; /* Par défaut côte à côte */
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - var(--header-height)); /* Ajusté pour ne pas être sous le header */
+    min-height: calc(100vh - var(--header-height));
     padding: 50px;
     text-align: center;
-    background: linear-gradient(135deg, #1a1a1a, #222); /* Conserve le dégradé existant */
+    background: linear-gradient(135deg, #1a1a1a, #222); /* Peut être remplacé par var(--color-dark-alt) et une autre couleur */
     animation: fadeIn 1s ease-in;
-    margin-top: var(--header-height); /* Compensation pour le header fixe */
-    gap: 40px; /* Espace entre le contenu et l'image */
+    margin-top: var(--header-height);
+    gap: 40px;
 }
 
 .hero-content {
     max-width: 650px;
-    text-align: left; /* Alignement du texte à gauche pour le contenu */
+    text-align: left;
 }
 
 .hero-title {
-    font-size: 3.5rem; /* Taille plus grande */
+    font-size: 3.5rem;
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, var(--clr-accent-cyan), var(--clr-accent-magenta));
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: transparent; /* Permet au dégradé d'être visible */
 }
 
 .hero-title .highlight-mba {
-    display: block; /* Force le MBA sur une nouvelle ligne */
-    font-size: 0.7em; /* Plus petit que le reste du titre */
+    display: block;
+    font-size: 0.7em;
     font-weight: 500;
-    color: var(--clr-accent-green); /* Couleur spécifique pour MBA */
-    background: none; /* Annule le background-clip pour le MBA */
+    color: var(--color-accent-green);
+    background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
     margin-bottom: 5px;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem; /* Légèrement plus grand */
-    color: var(--clr-text-medium);
+    font-size: 1.3rem;
+    color: var(--color-text-medium);
     margin-bottom: 30px;
 }
 
 .hero-buttons {
     display: flex;
     gap: 20px;
-    justify-content: flex-start; /* Aligne les boutons à gauche */
+    justify-content: flex-start;
 }
 
 .hero-image img {
-    width: 320px; /* Plus grand */
-    height: 320px; /* Assure une forme parfaite */
+    width: 320px;
+    height: 320px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.4); /* Effet plus lumineux et double couleur */
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.4);
     transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
 .hero-image img:hover {
-    transform: scale(1.08); /* Effet de zoom plus prononcé */
+    transform: scale(1.08);
     box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(255, 0, 255, 0.6);
+}
+
+/* Small Hero (pour les pages comme About, Articles, Projects) */
+.hero.small-hero {
+    min-height: 40vh;
+    padding: 80px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero.small-hero .hero-content {
+    max-width: 800px;
+    text-align: center;
+}
+.hero.small-hero .hero-title {
+    font-size: 3rem;
+}
+.hero.small-hero .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.hero.small-hero .hero-image {
+    display: none; /* Cache l'image de profil du hero sur ces pages */
 }
 
 
 /* ------------------------------------------- */
-/* 4. BOUTONS GÉNÉRAUX                        */
+/* 4. BOUTONS GÉNÉRAUX                         */
 /* ------------------------------------------- */
 .btn {
     display: inline-block;
-    padding: 14px 28px; /* Plus de padding */
+    padding: 14px 28px;
     text-decoration: none;
-    border-radius: 50px; /* Plus arrondi */
+    border-radius: var(--border-radius-pill);
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     text-align: center;
+    white-space: nowrap; /* Empêche le texte du bouton de se couper */
 }
 
-.btn-primary { /* Bouton principal (e.g., Voir Projets) */
-    background: linear-gradient(90deg, var(--clr-accent-cyan), var(--clr-accent-magenta));
-    color: var(--clr-dark-bg);
+.btn-primary {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-dark-bg);
     border: none;
-    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.4);
+    box-shadow: var(--shadow-primary);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
-    background: linear-gradient(90deg, var(--clr-accent-green), var(--clr-accent-cyan));
+    background: linear-gradient(90deg, var(--color-accent-green), var(--color-primary));
 }
 
-.btn-secondary { /* Bouton secondaire (e.g., Contact) */
+.btn-secondary {
     background: none;
-    border: 2px solid var(--clr-accent-cyan);
-    color: var(--clr-accent-cyan);
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-secondary);
 }
 
 .btn-secondary:hover {
     transform: translateY(-3px);
-    background: var(--clr-accent-cyan);
-    color: var(--clr-dark-bg);
+    background: var(--color-primary);
+    color: var(--color-dark-bg);
     box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
 }
 
-/* Nouveaux styles pour les boutons Outline (utilisés dans les sections "Voir Tous...") */
 .btn-primary-outline {
     background: none;
-    border: 2px solid var(--clr-accent-cyan);
-    color: var(--clr-accent-cyan);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
     padding: 12px 25px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-pill);
     font-weight: 500;
-    transition: all 0.3s ease-in-out;
 }
 .btn-primary-outline:hover {
-    background: var(--clr-accent-cyan);
-    color: var(--clr-dark-bg);
-    box-shadow: 0 0 20px var(--clr-accent-cyan);
+    background: var(--color-primary);
+    color: var(--color-dark-bg);
+    box-shadow: 0 0 20px var(--color-primary);
     transform: translateY(-2px);
 }
 
 .btn-secondary-outline {
     background: none;
-    border: 2px solid var(--clr-accent-magenta);
-    color: var(--clr-accent-magenta);
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
     padding: 12px 25px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-pill);
     font-weight: 500;
-    transition: all 0.3s ease-in-out;
 }
 .btn-secondary-outline:hover {
-    background: var(--clr-accent-magenta);
-    color: var(--clr-dark-bg);
-    box-shadow: 0 0 20px var(--clr-accent-magenta);
+    background: var(--color-secondary);
+    color: var(--color-dark-bg);
+    box-shadow: 0 0 20px var(--color-secondary);
     transform: translateY(-2px);
 }
 
 .btn-tertiary { /* Bouton "En Savoir Plus" dans la section About-Teaser */
     background: none;
-    border: 2px solid var(--clr-accent-green);
-    color: var(--clr-accent-green);
+    border: 2px solid var(--color-accent-green);
+    color: var(--color-accent-green);
     padding: 12px 25px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-pill);
     font-weight: 500;
     margin-top: 20px;
-    transition: all 0.3s ease-in-out;
 }
 .btn-tertiary:hover {
-    background: var(--clr-accent-green);
-    color: var(--clr-dark-bg);
-    box-shadow: 0 0 20px var(--clr-accent-green);
+    background: var(--color-accent-green);
+    color: var(--color-dark-bg);
+    box-shadow: 0 0 20px var(--color-accent-green);
     transform: translateY(-2px);
 }
 
 
 /* ------------------------------------------- */
-/* 5. SECTIONS GÉNÉRALES (H2, P, etc.)        */
+/* 5. SECTIONS GÉNÉRALES (H2, P, etc.)         */
 /* ------------------------------------------- */
 h2 {
-    font-size: 2.8rem; /* Plus grand pour les titres de section */
-    color: var(--clr-accent-cyan);
+    font-size: 2.8rem;
+    color: var(--color-primary);
     margin-bottom: 25px;
-    padding-top: 20px; /* Conserve l'espace du header pour les titres de section */
-    position: relative; /* Pour le pseudo-élément de soulignement */
-    display: inline-block; /* Pour que le pseudo-élément soit centré */
+    padding-top: 20px;
+    position: relative;
+    display: inline-block;
 }
 
 h2::after {
@@ -332,147 +388,464 @@ h2::after {
     display: block;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, var(--clr-accent-cyan), var(--clr-accent-magenta));
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
     margin: 15px auto 0;
     border-radius: 2px;
 }
 
 section p {
     font-size: 1.1rem;
-    color: var(--clr-text-medium);
+    color: var(--color-text-medium);
     max-width: 800px;
-    margin: 0 auto 40px; /* Plus d'espace sous les paragraphes introductifs */
+    margin: 0 auto 40px;
 }
 
 
 /* ------------------------------------------- */
-/* 6. SECTION À PROPOS (TEASER)               */
+/* 6. SECTION À PROPOS (TEASER & ABOUT PAGE)   */
 /* ------------------------------------------- */
 #about-teaser {
-    background: #1a1a1a; /* Un fond légèrement différent pour cette section */
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: var(--color-dark-alt);
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 #about-teaser p {
-    font-size: 1.15rem; /* Légèrement plus grand et plus lisible */
+    font-size: 1.15rem;
     line-height: 1.7;
     margin-bottom: 25px;
 }
 
-
-/* ------------------------------------------- */
-/* 7. SECTIONS PROJETS ET ARTICLES (CARDS)    */
-/* ------------------------------------------- */
-.project-list, .article-list {
-    display: grid; /* Utilisation de Grid pour un meilleur contrôle */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* 320px est une bonne taille min */
-    gap: 30px; /* Plus d'espace entre les cartes */
-    margin-top: 40px;
-    padding-bottom: 30px; /* Espace avant le bouton "Voir tout" */
+.about-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.about-profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    margin-bottom: 30px;
+    border: 4px solid var(--color-primary);
+}
+.about-intro p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--color-text-medium);
+    text-align: center;
+}
+.about-intro p strong {
+    color: var(--color-primary);
 }
 
-.project-card, .article-card {
-    background: var(--clr-card-bg);
-    padding: 25px; /* Plus de padding */
-    border-radius: 12px; /* Plus arrondi */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
+.about-sections { /* Styles pour les cartes de la page About complète */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.about-card {
+    background: var(--color-card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    text-align: left;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--color-border-subtle);
+}
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
+}
+.about-card h3 {
+    font-size: 22px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.about-card h3 i {
+    font-size: 24px;
+    color: var(--color-accent-yellow);
+}
+.about-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+.about-card ul li {
+    margin: 5px 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    color: var(--color-text-medium);
+}
+
+
+/* ------------------------------------------- */
+/* 7. SECTIONS PROJETS ET ARTICLES (CARDS)     */
+/* ------------------------------------------- */
+.project-list, .article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+
+/* Styles communs aux cartes de projets et d'articles */
+.project-card,
+.article-card {
+    background: var(--color-card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius-medium); /* Utilisez la variable */
+    box-shadow: var(--shadow-medium);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.05); /* Bordure subtile */
+    border: 1px solid var(--color-border-subtle);
 }
 
-.project-card:hover, .article-card:hover {
-    transform: translateY(-5px); /* Léger soulèvement */
-    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3), 0 8px 30px rgba(255, 0, 255, 0.2); /* Double ombre colorée */
+.project-card:hover,
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
-.project-card h3, .article-card h3 {
+.project-card h3,
+.article-card h3 {
     font-size: 24px;
-    color: var(--clr-accent-cyan);
+    color: var(--color-primary); /* Harmonisation avec les variables */
     margin-top: 0;
     margin-bottom: 15px;
 }
 
-.project-card p, .article-card p {
+.project-card p,
+.article-card p {
     font-size: 1rem;
-    color: var(--clr-text-medium);
-    margin-bottom: 20px; /* Espace sous le paragraphe de description */
-    flex-grow: 1; /* Pour que les paragraphes prennent de la place */
+    color: var(--color-text-medium);
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-.project-card img, .article-card img {
+.project-card img,
+.article-card img {
     width: 100%;
-    height: 200px; /* Hauteur fixe pour toutes les images */
-    border-radius: 8px;
+    height: 200px;
+    border-radius: var(--border-radius-small); /* Utilisez la variable */
     object-fit: cover;
     margin-bottom: 20px;
-    filter: brightness(0.85); /* Légèrement plus sombre */
+    filter: brightness(0.85);
     transition: filter 0.3s ease-in-out;
 }
-.project-card:hover img, .article-card:hover img {
-    filter: brightness(1); /* Devient plus lumineux au survol */
+.project-card:hover img,
+.article-card:hover img {
+    filter: brightness(1);
 }
 
-.project-buttons, .article-buttons {
+.project-buttons,
+.article-buttons {
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 15px; /* Plus d'espace entre les boutons */
-    margin-top: auto; /* Pousse les boutons vers le bas de la carte */
-    padding-top: 15px; /* Sépare du contenu au-dessus */
-    border-top: 1px solid rgba(255,255,255,0.05); /* Séparateur subtil */
+    gap: 15px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border-subtle);
 }
 
-.project-buttons .btn, .article-buttons .btn {
+.project-buttons .btn,
+.article-buttons .btn {
     flex-grow: 1;
     text-align: center;
     padding: 10px 15px;
-    font-size: 0.9rem; /* Plus petit pour les boutons de carte */
-    border-radius: 30px;
+    font-size: 0.9rem;
+    border-radius: var(--border-radius-pill); /* Utilisez la variable */
 }
+
 /* Spécifiques aux boutons de téléchargement */
-.project-buttons .btn-download, .article-buttons .btn-download {
-    background: rgba(0, 255, 255, 0.1); /* Plus transparent */
-    border: 1px solid var(--clr-accent-cyan);
-    color: var(--clr-accent-cyan);
+.project-buttons .btn-download,
+.article-buttons .btn-download {
+    background: var(--color-primary-light); /* Utilisez la variable */
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
 }
-.project-buttons .btn-download:hover, .article-buttons .btn-download:hover {
-    background: var(--clr-accent-cyan);
-    color: var(--clr-dark-bg);
+.project-buttons .btn-download:hover,
+.article-buttons .btn-download:hover {
+    background: var(--color-primary);
+    color: var(--color-dark-bg);
+}
+
+/* Styles pour les tags de projet */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.project-tags .tag {
+    background: var(--color-primary-light); /* Utilise la variable */
+    color: var(--color-primary);
+    padding: 6px 12px;
+    border-radius: var(--border-radius-pill); /* Utilise la variable */
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1px solid rgba(0, 255, 255, 0.3); /* Peut être var(--color-border-subtle) */
 }
 
 
 /* ------------------------------------------- */
-/* 8. FOOTER                                  */
+/* 8. CATÉGORIES D'ARTICLES (ONGLETS)          */
+/* ------------------------------------------- */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: var(--color-dark-alt); /* Utilisez une variable existante */
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-light);
+}
+
+.tab-button {
+    background-color: var(--color-card-bg); /* Un fond légèrement plus clair pour les boutons */
+    color: var(--color-text-light); /* Couleur du texte par défaut */
+    border: 1px solid var(--color-border);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-button:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary); /* Harmonisation avec le primary */
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background-color: var(--color-primary);
+    color: var(--color-dark-bg); /* Le texte actif doit être sombre pour contraster */
+    border-color: var(--color-primary);
+    font-weight: 600;
+    box-shadow: var(--shadow-primary);
+}
+
+
+/* ------------------------------------------- */
+/* 9. CONTENU DES ARTICLES DÉTAILLÉS           */
+/* ------------------------------------------- */
+.article-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: var(--color-text-medium); /* Utilisation du texte medium pour le corps */
+    text-align: left; /* Assure que le contenu est aligné à gauche */
+}
+
+.article-content p {
+    margin-bottom: 1.5em;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+    color: var(--color-primary); /* Titres d'article en couleur primaire */
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    line-height: 1.3;
+}
+
+.article-content h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.article-content h2 {
+    font-size: 2em;
+    color: var(--color-accent-green); /* Une couleur différente pour H2 d'article */
+    border-bottom: 1px dashed var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.article-content h3 {
+    font-size: 1.6em;
+    color: var(--color-secondary);
+}
+
+.article-content h4 {
+    font-size: 1.3em;
+}
+
+/* Styles pour les listes */
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 25px;
+}
+
+.article-content ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5em;
+    color: var(--color-text-medium); /* Assure la couleur de la liste */
+}
+
+.article-content ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5em;
+    color: var(--color-text-medium); /* Assure la couleur de la liste */
+}
+
+/* Styles pour les blocs de code */
+.article-content pre {
+    background-color: var(--color-dark-alt);
+    color: var(--color-text-medium); /* Texte clair pour le code */
+    padding: 1.5em;
+    border-radius: var(--border-radius-small);
+    overflow-x: auto;
+    margin: 2em 0;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+    line-height: 1.5;
+    border-left: 5px solid var(--color-primary);
+}
+
+.article-content code {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.3); /* Fond pour code inline */
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: var(--color-primary); /* Couleur distincte pour le code inline */
+}
+
+/* Styles pour les images dans le corps de l'article */
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Styles pour les citations */
+.article-content blockquote {
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 20px;
+    margin: 2em 0;
+    font-style: italic;
+    color: var(--color-text-medium);
+    background-color: var(--color-card-bg); /* Utilise la couleur de fond des cartes */
+    padding: 15px 20px;
+    border-radius: var(--border-radius-small);
+}
+
+/* Liens dans le corps de l'article */
+.article-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary-light);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.article-content a:hover {
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+/* Tableaux */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.95em;
+}
+
+.article-content th,
+.article-content td {
+    border: 1px solid var(--color-border);
+    padding: 12px 15px;
+    text-align: left;
+    color: var(--color-text-medium); /* Couleur du texte dans les cellules */
+}
+
+.article-content th {
+    background-color: var(--color-card-bg); /* Couleur de fond des en-têtes de tableau */
+    font-weight: 600;
+    color: var(--color-primary); /* Couleur du texte dans les en-têtes */
+}
+
+
+/* ------------------------------------------- */
+/* 10. PIED DE PAGE (FOOTER)                   */
 /* ------------------------------------------- */
 .main-footer {
     text-align: center;
-    padding: 30px; /* Plus de padding */
-    background: var(--clr-dark-alt);
-    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 30px;
+    background: var(--color-dark-alt);
+    border-top: 1px solid var(--color-border-subtle);
 }
 .main-footer p {
     margin: 5px 0;
-    color: var(--clr-text-medium);
+    color: var(--color-text-medium);
     font-size: 0.9rem;
 }
 .back-to-top {
-    color: var(--clr-accent-cyan);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 .back-to-top:hover {
-    color: var(--clr-accent-green);
+    color: var(--color-accent-green);
+}
+
+/* Section "Contact CTA" */
+#contact-cta {
+    padding-bottom: 60px;
+}
+#contact-cta h2 {
+    margin-top: 0;
+}
+#contact-cta p {
+    margin-bottom: 30px;
 }
 
 
 /* ------------------------------------------- */
-/* 9. MODAL ET FORMULAIRES                    */
+/* 11. MODAL ET FORMULAIRES                    */
 /* ------------------------------------------- */
 .modal {
     display: none;
@@ -480,16 +853,16 @@ section p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.95); /* Plus opaque */
-    padding: 30px; /* Plus de padding */
-    border-radius: 15px; /* Plus arrondi */
+    background: rgba(0, 0, 0, 0.95);
+    padding: 30px;
+    border-radius: var(--border-radius-large); /* Utilise la variable */
     box-shadow: 0 8px 30px rgba(0, 255, 255, 0.3), 0 8px 30px rgba(255, 0, 255, 0.2);
     text-align: center;
-    z-index: 10000; /* Z-index très élevé pour être sûr */
+    z-index: 10000;
     width: 90%;
-    max-width: 400px; /* Taille max pour le modal */
-    animation: fadeIn 0.4s ease-out; /* Animation plus douce */
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    max-width: 400px;
+    animation: fadeInModal 0.4s ease-out; /* Animation spécifique pour modal */
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Peut être var(--color-primary-light) */
 }
 
 .modal-content {
@@ -502,65 +875,65 @@ section p {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 28px; /* Plus grand */
-    color: var(--clr-text-medium);
+    font-size: 28px;
+    color: var(--color-text-medium);
     cursor: pointer;
     transition: color 0.2s ease;
 }
 .close-btn:hover {
-    color: var(--clr-accent-magenta);
+    color: var(--color-secondary); /* Couleur d'accentuation */
 }
 
-.modal h3 { /* Style pour les titres de modal */
-    color: var(--clr-accent-cyan);
+.modal h3 {
+    color: var(--color-primary); /* Titre du modal en couleur primaire */
     margin-bottom: 25px;
     font-size: 26px;
 }
 
-.contact-form { /* S'applique aussi au formulaire de commande avec les mêmes styles */
+.contact-form {
     max-width: 600px;
     margin: 25px auto;
     display: flex;
     flex-direction: column;
-    gap: 18px; /* Plus d'espace entre les champs */
+    gap: 18px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 16px; /* Plus de padding */
-    border-radius: 10px; /* Plus arrondi */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure plus fine */
-    background: rgba(255, 255, 255, 0.08); /* Plus transparent */
-    color: var(--clr-text-light);
+    padding: 16px;
+    border-radius: var(--border-radius-small); /* Utilise la variable */
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-text-light);
     font-size: 17px;
     transition: all 0.3s ease-in-out;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5); /* Plus subtil */
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 15px var(--clr-accent-cyan);
-    border: 1px solid var(--clr-accent-cyan);
+    box-shadow: 0 0 15px var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 .contact-form textarea {
-    height: 150px; /* Plus haut */
-    resize: vertical; /* Permet de redimensionner verticalement */
+    height: 150px;
+    resize: vertical;
 }
 
 .contact-form button {
     padding: 16px;
     border: none;
-    border-radius: 10px;
-    background: var(--clr-accent-cyan);
-    color: var(--clr-dark-bg);
+    border-radius: var(--border-radius-small);
+    background: var(--color-primary);
+    color: var(--color-dark-bg);
     font-size: 1.15rem;
     font-weight: bold;
     cursor: pointer;
@@ -569,37 +942,36 @@ section p {
 }
 
 .contact-form button:hover {
-    background: var(--clr-accent-green);
+    background: var(--color-accent-green);
     transform: scale(1.02);
-    box-shadow: 0 0 15px var(--clr-accent-green);
-}
-
-/* ------------------------------------------- */
-/* 10. FOOTER                                  */
-/* ------------------------------------------- */
-/* Styles pour la section de contact CTA (sur la page d'accueil) */
-#contact-cta {
-    padding-bottom: 60px; /* Moins de padding en bas avant le footer */
-}
-#contact-cta h2 {
-    margin-top: 0;
-}
-#contact-cta p {
-    margin-bottom: 30px;
+    box-shadow: 0 0 15px var(--color-accent-green);
 }
 
 
 /* ------------------------------------------- */
-/* 11. MEDIA QUERIES (RESPONSIVE DESIGN)      */
+/* 12. ANIMATIONS & GÉNÉRIQUES                 */
+/* ------------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
+/* ------------------------------------------- */
+/* 13. MEDIA QUERIES (RESPONSIVE DESIGN)       */
 /* ------------------------------------------- */
 @media screen and (max-width: 992px) {
-    /* Ajustements pour les écrans de taille moyenne */
     .hero {
-        flex-direction: column; /* Colonne sur les tablettes */
+        flex-direction: column;
         text-align: center;
-        padding-top: calc(var(--header-height) + 30px); /* Ajustement padding haut */
+        padding-top: calc(var(--header-height) + 30px);
         padding-bottom: 30px;
-        min-height: auto; /* Permet à la section de s'adapter à son contenu */
+        min-height: auto;
     }
     .hero-content {
         text-align: center;
@@ -619,7 +991,7 @@ section p {
         height: 250px;
     }
     .project-list, .article-list {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px min sur tablettes */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     .section-padding {
         padding: var(--padding-section-sm);
@@ -633,46 +1005,39 @@ section p {
 }
 
 @media screen and (max-width: 768px) {
-    /* Ajustements pour les petits écrans (mobiles) */
     .main-header {
-        padding: 15px 20px; /* Plus petit padding latéral */
+        padding: 15px 20px;
     }
-
     .logo {
         font-size: 20px;
     }
-
-    /* Menu hamburger spécifique */
     .menu-toggle {
-        display: block; /* Icône visible */
-        position: absolute; /* Positionnement absolu dans le header */
+        display: block;
+        position: absolute;
         top: 50%;
         right: 20px;
         transform: translateY(-50%);
     }
-
     .main-nav {
-        display: none; /* Masqué par défaut */
+        display: none;
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* Espacement dans le menu */
-        background: rgba(0, 0, 0, 0.98); /* Fond presque opaque */
-        position: fixed; /* Fixé pour couvrir l'écran */
-        top: var(--header-height); /* Sous le header */
+        gap: 20px;
+        background: rgba(0, 0, 0, 0.98);
+        position: fixed;
+        top: var(--header-height);
         left: 0;
         width: 100%;
-        height: calc(100vh - var(--header-height)); /* Prend le reste de la hauteur */
-        padding: 40px 0; /* Padding vertical pour le contenu */
-        overflow-y: auto; /* Scroll si contenu trop long */
+        height: calc(100vh - var(--header-height));
+        padding: 40px 0;
+        overflow-y: auto;
         transition: transform 0.3s ease-out;
-        transform: translateX(100%); /* Masqué à droite */
+        transform: translateX(100%);
     }
-
     .main-nav.active {
-        display: flex; /* Affiche quand actif */
-        transform: translateX(0); /* Glisse en place */
+        display: flex;
+        transform: translateX(0);
     }
-
     .main-nav ul {
         flex-direction: column;
         width: 100%;
@@ -683,46 +1048,41 @@ section p {
         text-align: center;
     }
     .main-nav a {
-        font-size: 1.5rem; /* Plus grand pour mobile */
+        font-size: 1.5rem;
         padding: 15px 0;
-        display: block; /* Prend toute la largeur */
+        display: block;
     }
-
     .hero-title {
-        font-size: 2rem; /* Plus petit sur mobile */
+        font-size: 2rem;
     }
     .hero-title .highlight-mba {
         font-size: 0.8em;
     }
     .hero-subtitle {
         font-size: 1rem;
-        padding: 0 10px; /* Padding latéral pour le texte */
+        padding: 0 10px;
     }
     .hero-buttons {
-        flex-direction: column; /* Boutons empilés */
+        flex-direction: column;
         align-items: center;
     }
     .btn {
-        width: 80%; /* Boutons plus larges */
+        width: 80%;
         max-width: 300px;
         margin: 10px auto;
     }
-
     .about-card, .project-card, .article-card {
-        width: 90%; /* Prend plus de largeur sur mobile */
+        width: 90%;
         max-width: 350px;
         margin: 20px auto;
     }
     .project-card img, .article-card img {
-        height: 180px; /* Plus petit sur mobile */
+        height: 180px;
     }
-
-    .social-icons a {
-        font-size: 22px; /* Plus petits sur mobile */
+    .social-icons a { /* Assurez-vous que cette classe existe et qu'elle est utilisée */
+        font-size: 22px;
         margin: 0 10px;
     }
-
-    /* Ajustements des formulaires sur mobile */
     .contact-form, .modal {
         padding: 20px;
     }
@@ -732,450 +1092,4 @@ section p {
         padding: 14px;
         font-size: 15px;
     }
-}
-
-/* Animations génériques */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInModal {
-    from { opacity: 0; transform: translate(-50%, -60%); } /* Commencer plus haut */
-    to { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-/* Styles pour la page 'About' (si elle utilise ces classes) */
-.about { /* Ancienne classe about, à ajuster si c'est la page complète */
-    padding: var(--padding-section-md);
-    background: var(--clr-dark-alt);
-    border-radius: 10px; /* Gardé pour l'instant */
-}
-.about h2 {
-    color: var(--clr-accent-cyan);
-}
-.about-sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-.about-card {
-    background: var(--clr-card-bg);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-    width: 300px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    text-align: left;
-    min-height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-.about-card:hover {
-    transform: translateY(-5px); /* Uniformisation de l'effet hover */
-    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.2);
-}
-.about-card h3 {
-    font-size: 22px;
-    color: var(--clr-accent-cyan);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.about-card h3 i {
-    font-size: 24px;
-    color: var(--clr-accent-yellow);
-}
-.about-card ul {
-    list-style-type: none;
-    padding: 0;
-}
-.about-card ul li {
-    margin: 5px 0;
-    padding-bottom: 5px;
-    border-bottom: none;
-    color: var(--clr-text-medium);
-}
-
-.hero.small-hero {
-    min-height: 40vh; /* Moins haut qu'un hero plein écran */
-    padding: 80px 5%; /* Ajustement du padding */
-    display: flex; /* Assure que le contenu reste centré */
-    flex-direction: column; /* Empile le titre et le sous-titre */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.hero.small-hero .hero-content {
-    max-width: 800px;
-    text-align: center; /* Centre le texte */
-}
-.hero.small-hero .hero-title {
-    font-size: 3rem; /* Ajustement de la taille du titre */
-}
-.hero.small-hero .hero-subtitle {
-    font-size: 1.2rem; /* Ajustement de la taille du sous-titre */
-    margin-bottom: 0; /* Pas de marge en bas */
-}
-.hero.small-hero .hero-image {
-    display: none; /* Cache l'image de profil du hero sur la page About Hero */
-}
-
-.about-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 20px;
-}
-.about-profile-img {
-    width: 200px; /* Taille pour la page About */
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); /* Légère ombre */
-    margin-bottom: 30px;
-    border: 4px solid var(--clr-accent-cyan); /* Bordure colorée */
-}
-.about-intro p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    color: var(--clr-text-medium);
-    text-align: center; /* Centre le texte */
-}
-.about-intro p strong { /* Style pour les mots-clés forts */
-    color: var(--clr-accent-cyan);
-}
-
-/* Media query pour aligner texte et image sur plus grands écrans */
-@media (min-width: 769px) {
-    .about-intro {
-        flex-direction: row; /* Image et texte côte à côte */
-        text-align: left; /* Texte aligné à gauche */
-        gap: 40px;
-        align-items: flex-start; /* Alignement en haut */
-    }
-    .about-profile-img {
-        margin-bottom: 0;
-        flex-shrink: 0; /* Empêche l'image de rétrécir */
-    }
-    .about-intro p {
-        text-align: left;
-    }
-}
-/* Styles pour les tags de projet */
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-    margin-bottom: 20px; /* Espace avant les boutons */
-}
-
-.project-tags .tag {
-    background: rgba(0, 255, 255, 0.15); /* Fond subtil */
-    color: var(--clr-accent-cyan);
-    padding: 6px 12px;
-    border-radius: 20px; /* Très arrondi */
-    font-size: 0.85rem;
-    font-weight: 500;
-    white-space: nowrap; /* Empêche le texte de se couper */
-    border: 1px solid rgba(0, 255, 255, 0.3); /* Bordure fine */
-}
-/* Styles pour les onglets de catégorie */
-.category-tabs {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur petits écrans */
-    justify-content: center;
-    gap: 10px; /* Espace entre les boutons */
-    margin-bottom: 40px;
-    padding: 10px;
-    background-color: var(--color-background-alt); /* Couleur de fond des onglets */
-    border-radius: 8px;
-    box-shadow: var(--shadow-light);
-}
-
-.tab-button {
-    background-color: var(--color-light); /* Couleur de fond par défaut des boutons */
-    color: var(--color-text-dark);
-    border: 1px solid var(--color-border);
-    padding: 10px 20px;
-    border-radius: 25px; /* Coins arrondis pour les pilules */
-    cursor: pointer;
-    font-size: 0.95em;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    white-space: nowrap; /* Empêche le texte du bouton de se couper */
-}
-
-.tab-button:hover {
-    background-color: var(--color-primary-light);
-    color: var(--color-primary-dark);
-    border-color: var(--color-primary);
-    transform: translateY(-2px); /* Petit effet de soulèvement */
-}
-
-.tab-button.active {
-    background-color: var(--color-primary); /* Couleur du bouton actif */
-    color: var(--color-white);
-    border-color: var(--color-primary);
-    font-weight: 600;
-    box-shadow: var(--shadow-primary);
-}
-
-/* Ajustements pour la liste d'articles si nécessaire */
-.article-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px; /* Espace au-dessus de la liste */
-}
-
-.article-card {
-    background-color: var(--color-light);
-    border-radius: var(--border-radius-large);
-    box-shadow: var(--shadow-medium);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.article-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.article-card img {
-    width: 100%;
-    height: 200px; /* Hauteur fixe pour les images des cartes */
-    object-fit: cover; /* Recadre l'image pour couvrir l'espace */
-}
-
-.article-card .article-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Permet à l'info de prendre l'espace restant */
-}
-
-.article-card .article-category {
-    display: inline-block;
-    background-color: var(--color-secondary-light);
-    color: var(--color-secondary-dark);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8em;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.article-card h3 {
-    font-size: 1.4em;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: var(--color-heading);
-}
-
-.article-card p {
-    font-size: 0.95em;
-    line-height: 1.6;
-    color: var(--color-text);
-    flex-grow: 1; /* Permet à la description de prendre l'espace */
-}
-
-.article-card .article-meta {
-    font-size: 0.85em;
-    color: var(--color-text-light);
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.article-card .article-meta i {
-    color: var(--color-primary);
-}
-
-.article-card .btn-secondary {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    text-decoration: none;
-    border-radius: var(--border-radius-small);
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.article-card .btn-secondary:hover {
-    background-color: var(--color-primary-dark);
-}
-
-/* Media Queries pour la responsivité */
-@media (max-width: 768px) {
-    .category-tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-    .tab-button {
-        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
-        max-width: 250px; /* Limite la largeur pour ne pas être trop large */
-    }
-}
-/* --- Styles généraux pour le contenu des articles --- */
-.article-content {
-    max-width: 850px; /* Limite la largeur du contenu pour une meilleure lisibilité */
-    margin: 0 auto; /* Centre le contenu */
-    padding: 40px 20px; /* Ajoute de l'espace intérieur */
-    line-height: 1.8; /* Espacement des lignes pour une meilleure lecture */
-    font-size: 1.1em; /* Taille de police légèrement augmentée */
-    color: var(--color-text); /* Couleur du texte principal */
-}
-
-.article-content p {
-    margin-bottom: 1.5em; /* Plus d'espace entre les paragraphes */
-}
-
-/* --- Styles pour les titres dans les articles --- */
-.article-content h1,
-.article-content h2,
-.article-content h3,
-.article-content h4,
-.article-content h5,
-.article-content h6 {
-    font-family: var(--font-heading); /* Utilisez votre police de titre si définie */
-    color: var(--color-heading); /* Couleur de vos titres */
-    margin-top: 2.5em; /* Espacement important avant un nouveau titre */
-    margin-bottom: 1em; /* Espacement après le titre */
-    line-height: 1.3;
-}
-
-.article-content h1 {
-    font-size: 2.5em;
-    border-bottom: 2px solid var(--color-primary); /* Ligne sous le titre principal de l'article */
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-}
-
-.article-content h2 {
-    font-size: 2em;
-    color: var(--color-primary-dark); /* Une couleur légèrement différente pour les sous-titres majeurs */
-    border-bottom: 1px dashed var(--color-border); /* Ligne pointillée sous H2 */
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-}
-
-.article-content h3 {
-    font-size: 1.6em;
-    color: var(--color-secondary); /* Une couleur pour les H3, ou la même que les H2 */
-}
-
-.article-content h4 {
-    font-size: 1.3em;
-}
-
-/* --- Styles pour les listes --- */
-.article-content ul,
-.article-content ol {
-    margin-bottom: 1.5em;
-    padding-left: 25px; /* Indentation pour les listes */
-}
-
-.article-content ul li {
-    list-style-type: disc; /* Puces classiques */
-    margin-bottom: 0.5em;
-}
-
-.article-content ol li {
-    list-style-type: decimal; /* Nombres classiques */
-    margin-bottom: 0.5em;
-}
-
-/* --- Styles pour les blocs de code (comme Python, Bash) --- */
-.article-content pre {
-    background-color: var(--color-dark-alt); /* Fond sombre pour le code */
-    color: #e0e0e0; /* Texte clair pour le code */
-    padding: 1.5em;
-    border-radius: var(--border-radius-small);
-    overflow-x: auto; /* Permet le défilement horizontal si le code est long */
-    margin: 2em 0; /* Espacement au-dessus et en dessous du bloc de code */
-    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace; /* Police monoespacée */
-    font-size: 0.95em;
-    line-height: 1.5;
-    border-left: 5px solid var(--color-primary); /* Bordure colorée sur la gauche */
-}
-
-.article-content code {
-    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
-    font-size: 0.9em; /* Taille légèrement plus petite pour le code inline */
-    background-color: var(--color-background-alt); /* Fond léger pour le code inline */
-    padding: 2px 5px;
-    border-radius: 3px;
-    color: var(--color-primary-dark); /* Couleur distincte pour le code inline */
-}
-
-/* --- Styles pour les images dans le corps de l'article --- */
-.article-content img {
-    max-width: 100%; /* S'assure que l'image ne dépasse pas le conteneur */
-    height: auto; /* Maintient le ratio de l'image */
-    display: block; /* Évite l'espace supplémentaire sous l'image */
-    margin: 2em auto; /* Centre l'image et ajoute de l'espace */
-    border-radius: var(--border-radius-small);
-    box-shadow: var(--shadow-medium); /* Petite ombre pour faire ressortir l'image */
-}
-
-/* --- Styles pour les citations (si vous en utilisez) --- */
-.article-content blockquote {
-    border-left: 4px solid var(--color-secondary);
-    padding-left: 20px;
-    margin: 2em 0;
-    font-style: italic;
-    color: var(--color-text-light);
-    background-color: var(--color-background-light);
-    padding: 15px 20px;
-    border-radius: var(--border-radius-small);
-}
-
-/* --- Liens dans le corps de l'article --- */
-.article-content a {
-    color: var(--color-primary); /* Couleur des liens */
-    text-decoration: none; /* Pas de soulignement par défaut */
-    border-bottom: 1px solid var(--color-primary-light); /* Soulignement subtil */
-    transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.article-content a:hover {
-    color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-}
-
-/* --- Tableaux (si vous en avez dans vos articles) --- */
-.article-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2em 0;
-    font-size: 0.95em;
-}
-
-.article-content th,
-.article-content td {
-    border: 1px solid var(--color-border);
-    padding: 12px 15px;
-    text-align: left;
-}
-
-.article-content th {
-    background-color: var(--color-background-alt);
-    font-weight: 600;
-    color: var(--color-heading);
 }
