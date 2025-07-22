@@ -61,7 +61,7 @@ body {
 /* Styles des titres (généraux) */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif; /* Peut être une variable --font-heading si vous en avez une */
-    color: var(--color-heading); /* Couleur par défaut des titres */
+    color: var(--color-heading); /* Couleur par default des titres */
     line-height: 1.3;
 }
 
@@ -507,16 +507,22 @@ section p {
 .project-card,
 .article-card {
     background: var(--color-card-bg);
-    padding: 25px;
+    /* Retiré le padding global de 25px ici pour la .project-card, il sera mis dans .project-content */
     border-radius: var(--border-radius-medium); /* Utilisez la variable */
     box-shadow: var(--shadow-medium);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    text-align: center;
+    /* text-align: center; REMPLACÉ par text-align: left; dans .project-content */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; REMPLACÉ par align-items: stretch; */
     border: 1px solid var(--color-border-subtle);
+
+    /* Nouveaux ajouts / Modifications pour les cartes de projet spécifiques */
+    align-items: stretch; /* Permet au contenu de s'étirer en largeur */
+    opacity: 1; /* Par défaut visible, géré par JS */
+    transform: translateY(0);
+    visibility: visible; /* Pour la transition cachée/visible */
 }
 
 .project-card:hover,
@@ -524,6 +530,19 @@ section p {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
 }
+
+/* Règle pour masquer les cartes par JavaScript */
+.project-card.hidden {
+    display: none; /* Cache complètement la carte */
+    /* Alternative pour une transition douce (nécessite des transitions CSS sur height/opacity) */
+    /* opacity: 0;
+    transform: translateY(20px);
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0; */
+}
+
 
 .project-card h3,
 .article-card h3 {
@@ -533,14 +552,16 @@ section p {
     margin-bottom: 15px;
 }
 
+/* Les paragraphes à l'intérieur de .project-content auront leur propre style */
 .project-card p,
 .article-card p {
     font-size: 1rem;
     color: var(--color-text-medium);
     margin-bottom: 20px;
-    flex-grow: 1;
+    flex-grow: 1; /* Garde ceci pour les paragraphes directs dans .article-card */
 }
 
+/* Les images à l'intérieur de .project-images auront leur propre style */
 .project-card img,
 .article-card img {
     width: 100%;
@@ -589,7 +610,7 @@ section p {
     color: var(--color-dark-bg);
 }
 
-/* Styles pour les tags de projet */
+/* Styles pour les tags de projet (général) */
 .project-tags {
     display: flex;
     flex-wrap: wrap;
@@ -608,6 +629,188 @@ section p {
     font-weight: 500;
     white-space: nowrap;
     border: 1px solid rgba(0, 255, 255, 0.3); /* Peut être var(--color-border-subtle) */
+}
+
+
+/* --- NOUVEAUX STYLES POUR LA PAGE PROJETS (DÉTAILS SPÉCIFIQUES) --- */
+
+/* Filtres de catégories */
+.category-filters {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+    justify-content: center;
+    gap: 10px; /* Espace entre les boutons */
+}
+
+.filter-btn {
+    background-color: var(--color-card-bg); /* Utilise la couleur de fond de carte */
+    color: var(--color-text-light); /* Couleur de texte clair */
+    border: 1px solid var(--color-border-subtle);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-pill); /* Forme de pilule */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Empêche les boutons de se casser sur plusieurs lignes */
+}
+
+.filter-btn:hover {
+    background-color: var(--color-primary-light); /* Couleur primaire plus claire au survol */
+    color: var(--color-primary); /* Couleur primaire pour le texte */
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--color-primary); /* Utilisation de votre couleur primaire */
+    color: var(--color-dark-bg); /* Texte clair sur fond primaire */
+    border-color: var(--color-primary);
+    font-weight: 600;
+    box-shadow: var(--shadow-primary);
+}
+
+
+/* En-tête de la carte de projet spécifique (pour les cartes détaillées) */
+.project-card .project-header {
+    background-color: var(--color-primary); /* Utilisez votre couleur primaire pour l'en-tête */
+    color: var(--color-dark-bg); /* Texte clair */
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: var(--border-radius-medium);
+    border-top-right-radius: var(--border-radius-medium);
+    margin-bottom: 20px; /* Ajout d'une marge en bas de l'en-tête */
+}
+
+.project-card .project-header h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: inherit; /* Hérite de la couleur du parent */
+}
+
+/* Tags de projet dans l'en-tête de la carte spécifique */
+.project-card .project-header .project-tags {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px; /* Ajuster la marge pour les tags dans l'en-tête */
+    margin-bottom: 0; /* Pas de marge en bas si dans l'en-tête */
+}
+
+.project-card .project-header .project-tags span {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 15px;
+    margin: 2px;
+}
+
+/* Contenu de la carte (description, images, etc.) */
+.project-card .project-content {
+    padding: 0 25px 25px 25px; /* Ajuste le padding pour tenir compte du padding global de .project-card */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Aligne le texte à gauche pour une meilleure lisibilité */
+}
+
+.project-card .project-content h4 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.project-card .project-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-medium);
+    margin-bottom: 15px;
+    flex-grow: 0; /* Ne pas faire grandir les paragraphes, c'est le conteneur qui doit grandir */
+}
+
+/* Images de projet spécifiques à la galerie à l'intérieur du contenu */
+.project-card .project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Grid pour les images */
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.project-card .project-images img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-light); /* Utilise shadow-light pour les petites images */
+    object-fit: cover;
+    max-height: 150px; /* Limite la hauteur des images miniatures */
+    filter: brightness(0.95); /* Plus subtil que le 0.85 global si elles sont dans le contenu */
+    transition: filter 0.3s ease-in-out;
+}
+
+.project-card .project-images img:hover {
+    filter: brightness(1);
+}
+
+/* Liens et boutons en bas de carte (spécifiques aux cartes détaillées) */
+.project-card .project-links {
+    margin-top: auto; /* Pousse les liens vers le bas de la carte */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.project-card .project-links .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border-radius: var(--border-radius-pill);
+    /* Les styles btn-secondary ou btn-primary-outline déjà définis s'appliqueront */
+}
+
+.project-card .project-links .btn i {
+    font-size: 1rem;
+}
+
+
+/* Styles spécifiques à l'iframe Power BI */
+.project-card .powerbi-dashboard {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (pour embed responsive) */
+    height: 0;
+    overflow: hidden;
+    background-color: var(--color-dark-alt); /* Fond pour le chargement, harmonisé */
+    border-radius: var(--border-radius-small); /* Coins arrondis */
+    box-shadow: var(--shadow-medium); /* Ombre légère */
+}
+
+.project-card .powerbi-dashboard iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.powerbi-caption {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--color-text-medium);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Pour un peu d'espace après la légende */
 }
 
 
@@ -1071,11 +1274,54 @@ section p {
         max-width: 300px;
         margin: 10px auto;
     }
-    .about-card, .project-card, .article-card {
+
+    /* Déjà existant, mais sera partiellement remplacé/complété par les nouvelles règles spécifiques */
+    /* .about-card, .project-card, .article-card {
         width: 90%;
         max-width: 350px;
         margin: 20px auto;
+    } */
+
+    /* NOUVELLES RÈGLES SPÉCIFIQUES POUR LES CARTES DE PROJETS SUR MOBILE */
+    .project-card {
+        width: 90%;
+        max-width: 400px; /* Un peu plus large pour les iframes */
+        margin: 20px auto;
+        padding: 0; /* Important pour les cartes détaillées */
     }
+    .project-card .project-header {
+        padding: 15px;
+        font-size: 1.2rem;
+        border-bottom-left-radius: 0; /* Pour s'aligner avec le contenu */
+        border-bottom-right-radius: 0;
+    }
+    .project-card .project-header h3 {
+        font-size: 1.2rem;
+    }
+    .project-card .project-content {
+        padding: 15px; /* Réduit le padding du contenu interne */
+    }
+    .project-card .project-tags {
+        font-size: 0.75rem; /* Réduire la taille des tags sur mobile */
+        margin-top: 5px; /* Ajuster la marge */
+        margin-bottom: 5px;
+    }
+    .project-card .project-images {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Plus petites images sur mobile */
+        gap: 8px;
+    }
+    .project-card .project-links {
+        flex-direction: column; /* Boutons en colonne sur mobile */
+        align-items: center;
+        gap: 8px; /* Réduire l'espace entre les boutons */
+    }
+    .project-card .powerbi-dashboard {
+        padding-bottom: 75%; /* Ratio 4:3 ou ajustez selon l'apparence sur mobile */
+    }
+
+
+    /* Fin des nouvelles règles spécifiques */
+
     .project-card img, .article-card img {
         height: 180px;
     }
@@ -1092,4 +1338,5 @@ section p {
         padding: 14px;
         font-size: 15px;
     }
+
 }
