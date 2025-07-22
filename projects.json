@@ -15,7 +15,7 @@
             "images/Sol cover.jpg",
             "images/image_cb49de.jpg",
             "images/image_cace5b.jpg"
-            // Ajoutez d'autres chemins d'images ici pour la galerie du projet
+
         ],
         "powerBILink": "", 
         "powerBICaption": "",
@@ -38,7 +38,7 @@
             "images/image_a531f9.png", 
             "images/image_ae233f.jpg",
             "images/image_c9e19f.jpg"
-            // Ajoutez d'autres images pertinentes
+
         ],
         "powerBILink": "https://app.powerbi.com/reportEmbed?reportId=da372cc8-a3b4-4e43-afa3-e894071212b7&autoAuth=true&ctid=34e72ae5-104f-4883-bf70-4c6d88f2c04e",
         "powerBICaption": "Tableau de bord interactif des ventes e-commerce : Explorez les données de performance en direct.",
