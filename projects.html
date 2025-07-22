@@ -7,8 +7,7 @@
     <meta name="description" content="Explorez les projets de Nikelson Michel en analyse de données, machine learning, visualisation et business intelligence. Découvrez des solutions concrètes avec Python, SQL, Power BI et Tableau.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
     <header class="main-header">
@@ -45,10 +44,13 @@
             <h2>Découvrez mes réalisations</h2>
             <p>Chaque projet illustre une problématique métier résolue et les compétences techniques mises en œuvre.</p>
             
-            <div id="project-list" class="project-list">
+            <div id="category-filters" class="category-filters-container mb-4">
                 </div>
 
-            </section>
+            <div id="project-list" class="project-list">
+                <p class="loading-message">Chargement des projets...</p>
+                </div>
+        </section>
 
         <section id="contact-cta" class="section-padding bg-dark-alt">
             <div class="container text-center">
@@ -69,7 +71,7 @@
 
     <footer class="main-footer">
         <div class="container text-center">
-            <p>&copy; 2025 Nikelson Michel - Tous droits réservés.</p>
+            <p>© 2025 Nikelson Michel - Tous droits réservés.</p>
             <p><a href="#top" class="back-to-top">Retour en haut de page</a></p>
         </div>
     </footer>
@@ -119,7 +121,6 @@
     </div>
 
     <script src="scripts/main.js"></script>
-    <script src="scripts/projects.js"></script> 
-
-</body>
+    <script src="scripts/projects.js"></script>
+    </body>
 </html>
