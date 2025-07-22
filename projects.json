@@ -24,16 +24,15 @@
         "orderable": true
     },
     {
-        "title": "Analyse de la Performance des Ventes E-commerce",
+        "title": "Nella Studio Dashboard",
         "category": ["Analyse de Données", "Business Intelligence", "Visualisation"],
-        "description": "Un projet complet d'analyse de données pour optimiser les stratégies de vente d'une plateforme e-commerce.",
+        "description": "Un projet complet de visualisation de donnée permettant à un salon de coiffure d'exploiter ses données.",
         "details": [
-            "Collecte et nettoyage de données transactionnelles issues de bases de données SQL.",
+            "Collecte et nettoyage de données transactionnelles issues de la fiche des réservations des clients et des reçus générés par l'outils de paiement.",
             "Analyse exploratoire des données (EDA) pour identifier les tendances de vente, les produits phares et les segments de clientèle.",
-            "Création d'un tableau de bord interactif dans Power BI pour le suivi en temps réel des indicateurs clés de performance (KPIs) : chiffre d'affaires, marge, taux de conversion, panier moyen.",
-            "Développement de requêtes SQL complexes pour l'extraction et la transformation des données."
+            "Création d'un tableau de bord interactif dans Power BI pour suivre les réservations, projeter le chiffre d'affaire de chaque journée ainsi que celui du mois voir l'année et suivre le comportement des clients No show"
         ],
-        "tags": ["SQL", "Python (Pandas, Matplotlib)", "Power BI", "KPIs", "E-commerce"],
+        "tags": ["SQL", "Power BI", "KPIs", "Salon de Coiffures","Moneris"],
         "images": [
             "images/image_a531f9.png", 
             "images/image_ae233f.jpg",
@@ -41,7 +40,7 @@
 
         ],
         "powerBILink": "https://app.powerbi.com/reportEmbed?reportId=da372cc8-a3b4-4e43-afa3-e894071212b7&autoAuth=true&ctid=34e72ae5-104f-4883-bf70-4c6d88f2c04e",
-        "powerBICaption": "Tableau de bord interactif des ventes e-commerce : Explorez les données de performance en direct.",
+        "powerBICaption": "Tableau de bord interactif pour un salon de coiffure: Explorez les données de performance en direct.",
         "liveDemoLink": "#", 
         "githubLink": "https://github.com/minikel/e-commerce-sales-analysis",
         "orderable": false
