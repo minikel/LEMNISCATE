@@ -1,9 +1,67 @@
 [
     {
         "title": "SÒL VBA APPLICATION",
-        "description": "A VBA application dedicated to managing a SòL. You can add, create a SòL, add a member, record transactions, automatically send receipts and reminder emails.",
-        "image": "images/Sol cover.jpg",
-        "demo": "https://drive.google.com/file/d/18aktPwUzNBKRKeSoBnwoP-jCdDl3WnU9/view?usp=sharing",
-        "orderLink": "https://drive.google.com/file/d/18aktPwUzNBKRKeSoBnwoP-jCdDl3WnU9/view?usp=sharing"
+        "category": ["Automatisation", "Développement VBA", "Gestion Financière"],
+        "description": "Application VBA robuste conçue pour la gestion complète d'une Association Tontine (SòL).",
+        "details": [
+            "Permet d'ajouter et de créer de nouvelles Associations (SòL) avec tous les paramètres nécessaires.",
+            "Facilite l'ajout de membres aux SòL existantes.",
+            "Enregistre et suit toutes les transactions financières (cotisations, prêts, remboursements).",
+            "Automatise l'envoi de reçus de paiement et de courriels de rappel aux membres.",
+            "Offre une interface utilisateur intuitive pour une gestion simplifiée et efficace des opérations quotidiennes."
+        ],
+        "tags": ["VBA", "Excel", "Automatisation", "Gestion de base de données"],
+        "images": [
+            "images/Sol cover.jpg",
+            "images/image_cb49de.jpg",
+            "images/image_cace5b.jpg"
+            // Ajoutez d'autres chemins d'images ici pour la galerie du projet
+        ],
+        "powerBILink": "", 
+        "powerBICaption": "",
+        "liveDemoLink": "https://drive.google.com/file/d/18aktPwUzNBKRKeSoBnwoP-jCdDl3WnU9/view?usp=sharing",
+        "githubLink": "",
+        "orderable": true
+    },
+    {
+        "title": "Analyse de la Performance des Ventes E-commerce",
+        "category": ["Analyse de Données", "Business Intelligence", "Visualisation"],
+        "description": "Un projet complet d'analyse de données pour optimiser les stratégies de vente d'une plateforme e-commerce.",
+        "details": [
+            "Collecte et nettoyage de données transactionnelles issues de bases de données SQL.",
+            "Analyse exploratoire des données (EDA) pour identifier les tendances de vente, les produits phares et les segments de clientèle.",
+            "Création d'un tableau de bord interactif dans Power BI pour le suivi en temps réel des indicateurs clés de performance (KPIs) : chiffre d'affaires, marge, taux de conversion, panier moyen.",
+            "Développement de requêtes SQL complexes pour l'extraction et la transformation des données."
+        ],
+        "tags": ["SQL", "Python (Pandas, Matplotlib)", "Power BI", "KPIs", "E-commerce"],
+        "images": [
+            "images/image_a531f9.png", 
+            "images/image_ae233f.jpg",
+            "images/image_c9e19f.jpg"
+            // Ajoutez d'autres images pertinentes
+        ],
+        "powerBILink": "https://app.powerbi.com/view?r=eyJrIjoiNjY1YWRmNzUtZDY0MC00YzA5LWEwMzUtYmRiOWY2NTBiMjYzIiwidCI6IjMzODVjMjI5LWJlNDQtNDQ0YS04YTQxLThjZDkzZGJiNGQ3YiIsImMiOjl9",
+        "powerBICaption": "Tableau de bord interactif des ventes e-commerce (cliquez sur les éléments pour filtrer).",
+        "liveDemoLink": "#", 
+        "githubLink": "https://github.com/minikel/e-commerce-sales-analysis",
+        "orderable": false
+    },
+    {
+        "title": "Prédiction de la Rétention Client (Churn)",
+        "category": ["Machine Learning", "Analyse Prédictive", "Python"],
+        "description": "Modèle de Machine Learning pour prédire le désabonnement des clients et identifier les facteurs influents.",
+        "details": [
+            "Préparation et ingénierie des caractéristiques à partir de données clients et d'usage.",
+            "Comparaison de plusieurs algorithmes de classification (Random Forest, Logistic Regression, Gradient Boosting).",
+            "Évaluation du modèle et interprétation des résultats pour guider les stratégies de rétention.",
+            "Implémentation du modèle dans un pipeline de données pour des prédictions régulières."
+        ],
+        "tags": ["Python", "Scikit-learn", "Pandas", "Modélisation prédictive", "Classification"],
+        "images": [],
+        "powerBILink": "",
+        "powerBICaption": "",
+        "liveDemoLink": "#",
+        "githubLink": "https://github.com/minikel/customer-churn-prediction",
+        "orderable": false
     }
 ]
