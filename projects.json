@@ -23,7 +23,7 @@
                 "text": "Démonstration Live",
                 "icon": "fa-solid fa-desktop"
             }
-            // Pas de lien GitHub fourni pour ce projet, donc pas inclus ici
+ 
         ],
         "orderable": true
     },
@@ -77,7 +77,7 @@
                 "text": "Code Source (GitHub)",
                 "icon": "fa-brands fa-github"
             }
-            // Pas de démonstration live ou Power BI pour ce projet
+  
         ],
         "orderable": false
     }
