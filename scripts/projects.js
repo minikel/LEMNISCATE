@@ -42,7 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // Extraire les catégories uniques
         const categories = new Set();
         projects.forEach(project => {
-            project.category.forEach(cat => categories.add(cat));
+            // Assurez-vous que project.category est un tableau
+            if (Array.isArray(project.category)) {
+                project.category.forEach(cat => categories.add(cat));
+            } else if (typeof project.category === 'string') {
+                // Si la catégorie est une chaîne simple, l'ajouter directement
+                categories.add(project.category);
+            }
         });
 
         // Ajouter le bouton "Tous"
@@ -84,8 +90,13 @@ document.addEventListener("DOMContentLoaded", function() {
         projectListContainer.innerHTML = ''; // Nettoyer le conteneur avant de rendre
 
         const filteredProjects = projects.filter(project => {
+            // Assurez-vous que project.category est un tableau pour la méthode includes
+            if (!Array.isArray(project.category)) {
+                return filter === "all" || project.category === filter; // Gérer le cas où category est une chaîne simple
+            }
             return filter === "all" || project.category.includes(filter);
         });
+
 
         if (filteredProjects.length === 0) {
             projectListContainer.innerHTML = `<p class="no-projects-message">Aucun projet trouvé pour cette catégorie.</p>`;
@@ -117,36 +128,70 @@ document.addEventListener("DOMContentLoaded", function() {
                 detailsHtml += `</div>`;
             }
 
-            let powerBiHtml = '';
-            if (project.powerBILink) {
-                powerBiHtml = `
-                    <div class="powerbi-dashboard">
-                        <iframe title="${project.title} Dashboard" width="100%" height="auto" src="${project.powerBILink}" frameborder="0" allowFullScreen="true"></iframe>
+            let mediaEmbedHtml = '';
+            // Rechercher un lien YouTube dans le tableau 'links'
+            const youtubeLink = project.links ? project.links.find(link => link.type === 'youtube') : null;
+
+            if (youtubeLink) {
+                // Assurez-vous que l'URL d'incorporation est correcte
+                mediaEmbedHtml = `
+                    <div class="video-embed-container">
+                        <iframe src="${youtubeLink.url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    ${project.powerBICaption ? `<p class="powerbi-caption">${project.powerBICaption}</p>` : ''}
+                    <p class="video-caption">${youtubeLink.text || "Démonstration vidéo du projet."}</p>
                 `;
             }
 
-            let buttonsHtml = `
-                <div class="project-links">
-                    ${project.githubLink ? `<a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-outline">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>` : ''}
-            `;
-            const demoLink = project.liveDemoLink || project.demo; // Compatibilité pour demoLink ou demo
-            if (demoLink && demoLink !== "#") {
-                    buttonsHtml += `
-                        <a href="${demoLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary-outline">
-                            <i class="fas fa-eye"></i> Démo Live
-                        </a>
-                    `;
-            }
-            if (project.orderable) {
-                buttonsHtml += `
-                    <button class="btn btn-primary order-project-btn" data-project-title="${project.title}">
-                        <i class="fas fa-shopping-cart"></i> Commander
-                    </button>
-                `;
+            let buttonsHtml = `<div class="project-links">`;
+            if (project.links && project.links.length > 0) {
+                project.links.forEach(link => {
+                    let btnClass = '';
+                    let btnIcon = '';
+                    let linkText = link.text || '';
+
+                    switch (link.type) {
+                        case 'live':
+                            btnClass = 'btn-primary-outline';
+                            btnIcon = '<i class="fa-solid fa-desktop"></i>';
+                            linkText = linkText || 'Démo Live';
+                            break;
+                        case 'github':
+                            btnClass = 'btn-secondary-outline';
+                            btnIcon = '<i class="fa-brands fa-github"></i>';
+                            linkText = linkText || 'Code Source (GitHub)';
+                            break;
+                        case 'youtube':
+                            // Le lien YouTube est déjà géré par mediaEmbedHtml, ce bouton est optionnel
+                            // S'il est présent, il ouvrira la vidéo dans une nouvelle fenêtre/onglet
+                            btnClass = 'btn-secondary-outline';
+                            btnIcon = '<i class="fa-brands fa-youtube"></i>';
+                            linkText = linkText || 'Voir la Vidéo';
+                            break;
+                        case 'order': // Gérer le type 'order' si vous l'avez dans le tableau links
+                             btnClass = 'btn-primary order-project-btn'; // Utilisez une classe spécifique pour le bouton commander
+                             btnIcon = '<i class="fa-solid fa-cart-shopping"></i>';
+                             linkText = linkText || 'Commander';
+                             break;
+                        default:
+                            btnClass = 'btn-secondary-outline';
+                            btnIcon = '<i class="fa-solid fa-link"></i>'; // Icône générique
+                    }
+
+                    // Pour le bouton commander, nous ne créons pas un lien <a> mais un <button>
+                    if (link.type === 'order') {
+                        buttonsHtml += `
+                            <button class="btn ${btnClass}" data-project-title="${project.title}">
+                                ${btnIcon} ${linkText}
+                            </button>
+                        `;
+                    } else {
+                        buttonsHtml += `
+                            <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn ${btnClass}">
+                                ${btnIcon} ${linkText}
+                            </a>
+                        `;
+                    }
+                });
             }
             buttonsHtml += `</div>`;
 
@@ -163,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p>${project.description}</p>
                     ${imagesHtml}
                     ${detailsHtml}
-                    ${powerBiHtml}
+                    ${mediaEmbedHtml}
                 </div>
                 ${buttonsHtml}
             `;
