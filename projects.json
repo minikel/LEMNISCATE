@@ -27,37 +27,37 @@
         ],
         "orderable": true
     },
-    {
-        "title": "Nella Studio Dashboard",
-        "category": ["Analyse de Données", "Business Intelligence", "Visualisation"],
-        "description": "Un projet complet de visualisation de donnée permettant à un salon de coiffure d'exploiter ses données.",
-        "details": [
-            "Collecte et nettoyage de données transactionnelles issues de la fiche des réservations des clients et des reçus générés par l'outils de paiement.",
-            "Analyse exploratoire des données (EDA) pour identifier les tendances de vente, les produits phares et les segments de clientèle.",
-            "Création d'un tableau de bord interactif dans Power BI pour suivre les réservations, projeter le chiffre d'affaire de chaque journée ainsi que celui du mois voir l'année et suivre le comportement des clients No show"
-        ],
-        "tags": ["SQL", "Power BI", "KPIs", "Salon de Coiffures","Moneris"],
-        "images": [
-            "images/Page Acceuil_NS_TABLEAU DE BORD.png",
-            "images/Page Ventes_ Client NS_TABLEAU DE BORD.png",
-            "images/Page Ventes_Mois NS_TABLEAU DE BORD.png"
-        ],
-        "links": [
-            {
-                "type": "youtube",
-                "url": "https://youtu.be/bNWyuH3KZDM",
-                "text": "Démonstration Vidéo",
-                "icon": "fa-brands fa-youtube"
-            },
-            {
-                "type": "github",
-                "url": "https://github.com/minikel/e-commerce-sales-analysis",
-                "text": "Code Source (GitHub)",
-                "icon": "fa-brands fa-github"
-            }
-        ],
-        "orderable": false
-    },
+{
+    "title": "Nella Studio Dashboard",
+    "category": ["Analyse de Données", "Business Intelligence", "Visualisation"],
+    "description": "Un projet complet de visualisation de donnée permettant à un salon de coiffure d'exploiter ses données.",
+    "details": [
+        "Collecte et nettoyage de données transactionnelles issues de la fiche des réservations des clients et des reçus générés par l'outils de paiement.",
+        "Analyse exploratoire des données (EDA) pour identifier les tendances de vente, les produits phares et les segments de clientèle.",
+        "Création d'un tableau de bord interactif dans Power BI pour suivre les réservations, projeter le chiffre d'affaire de chaque journée ainsi que celui du mois voir l'année et suivre le comportement des clients No show"
+    ],
+    "tags": ["SQL", "Power BI", "KPIs", "Salon de Coiffures","Moneris"],
+    "images": [
+        "images/Page Acceuil_NS_TABLEAU DE BORD.png",
+        "images/Page Ventes_ Client NS_TABLEAU DE BORD.png",
+        "images/Page Ventes_Mois NS_TABLEAU DE BORD.png"
+    ],
+    "links": [
+        {
+            "type": "youtube",
+            "url": "https://www.youtube.com/embed/bNWyuH3KZDM?si=5pI5RXZKVg4hXCuL", 
+            "text": "Démonstration Vidéo",
+            "icon": "fa-brands fa-youtube"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/minikel/e-commerce-sales-analysis",
+            "text": "Code Source (GitHub)",
+            "icon": "fa-brands fa-github"
+        }
+    ],
+    "orderable": false
+},
     {
         "title": "Prédiction de la Rétention Client (Churn)",
         "category": ["Machine Learning", "Analyse Prédictive", "Python"],
