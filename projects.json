@@ -15,12 +15,16 @@
             "images/Sol cover.jpg",
             "images/recu sol.png",
             "images/creation sol.png"
-
         ],
-        "powerBILink": "", 
-        "powerBICaption": "",
-        "liveDemoLink": "https://drive.google.com/file/d/18aktPwUzNBKRKeSoBnwoP-jCdDl3WnU9/view?usp=sharing",
-        "githubLink": "",
+        "links": [
+            {
+                "type": "live",
+                "url": "https://drive.google.com/file/d/18aktPwUzNBKRKeSoBnwoP-jCdDl3WnU9/view?usp=sharing",
+                "text": "Démonstration Live",
+                "icon": "fa-solid fa-desktop"
+            }
+            // Pas de lien GitHub fourni pour ce projet, donc pas inclus ici
+        ],
         "orderable": true
     },
     {
@@ -34,15 +38,24 @@
         ],
         "tags": ["SQL", "Power BI", "KPIs", "Salon de Coiffures","Moneris"],
         "images": [
-            "images/Page Acceuil_NS_TABLEAU DE BORD.png", 
+            "images/Page Acceuil_NS_TABLEAU DE BORD.png",
             "images/Page Ventes_ Client NS_TABLEAU DE BORD.png",
             "images/Page Ventes_Mois NS_TABLEAU DE BORD.png"
-
         ],
-        "powerBILink": "https://app.powerbi.com/reportEmbed?reportId=da372cc8-a3b4-4e43-afa3-e894071212b7&autoAuth=true&ctid=34e72ae5-104f-4883-bf70-4c6d88f2c04e",
-        "powerBICaption": "Tableau de bord interactif pour un salon de coiffure: Explorez les données de performance en direct.",
-        "liveDemoLink": "#", 
-        "githubLink": "https://github.com/minikel/e-commerce-sales-analysis",
+        "links": [
+            {
+                "type": "youtube",
+                "url": "https://youtu.be/bNWyuH3KZDM",
+                "text": "Démonstration Vidéo",
+                "icon": "fa-brands fa-youtube"
+            },
+            {
+                "type": "github",
+                "url": "https://github.com/minikel/e-commerce-sales-analysis",
+                "text": "Code Source (GitHub)",
+                "icon": "fa-brands fa-github"
+            }
+        ],
         "orderable": false
     },
     {
@@ -57,10 +70,15 @@
         ],
         "tags": ["Python", "Scikit-learn", "Pandas", "Modélisation prédictive", "Classification"],
         "images": [],
-        "powerBILink": "",
-        "powerBICaption": "",
-        "liveDemoLink": "#",
-        "githubLink": "https://github.com/minikel/customer-churn-prediction",
+        "links": [
+            {
+                "type": "github",
+                "url": "https://github.com/minikel/customer-churn-prediction",
+                "text": "Code Source (GitHub)",
+                "icon": "fa-brands fa-github"
+            }
+            // Pas de démonstration live ou Power BI pour ce projet
+        ],
         "orderable": false
     }
 ]
