@@ -1489,3 +1489,54 @@ section p {
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+/* Dans style.css ou une feuille de style pour mobile */
+
+/* Par défaut, cacher le menu sur les petits écrans */
+@media (max-width: 768px) { /* ou le breakpoint que vous utilisez */
+    .main-nav .nav-links {
+        display: none; /* Cache les liens de navigation */
+        flex-direction: column; /* Pour empiler les liens verticalement */
+        position: absolute; /* Positionne le menu sous le header */
+        top: var(--header-height, 60px); /* Ajustez selon la hauteur réelle de votre header */
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-menu, #333); /* Couleur de fond du menu ouvert */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 999; /* Assurez-vous qu'il est au-dessus du reste du contenu */
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Afficher le menu quand la classe 'active' est ajoutée par JavaScript */
+    .main-nav .nav-links.active {
+        display: flex; /* Rend le menu visible */
+    }
+
+    /* Assurez-vous que le bouton hamburger est visible sur mobile */
+    .menu-toggle {
+        display: block; /* Affiche le bouton */
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--primary-color); /* Couleur de l'icône */
+        padding: 10px;
+        z-index: 1000; /* Au-dessus du menu */
+    }
+
+    /* Masquer le menu complet sur les écrans plus grands */
+    /* Cela devrait déjà être géré, mais pour rappel */
+    .main-nav {
+        /* Par défaut, sur desktop, nav-links est flex/block et menu-toggle est none */
+    }
+}
+
+/* Vous pouvez aussi avoir des styles pour l'icône X si vous le souhaitez */
+.menu-toggle i {
+    transition: transform 0.3s ease; /* Animation douce pour l'icône */
+}
+
+.menu-toggle.active i {
+    transform: rotate(90deg); /* Fait pivoter l'icône */
+}
