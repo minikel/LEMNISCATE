@@ -80,5 +80,43 @@
   
         ],
         "orderable": false
-    }
+    },
+{
+    "title": "VALIDO - Gestionnaire de Commandes PWA",
+    "category": [
+        "Développement Web",
+        "Automatisation",
+        "Business Intelligence",
+        "Progressive Web App"
+    ],
+    [cite_start]"description": "VALIDO est une Progressive Web App (PWA) conçue pour optimiser le processus de validation des commandes en production[cite: 2, 6]. [cite_start]Elle permet aux opérateurs de rechercher des commandes, scanner des codes produits et valider des expéditions, tout en synchronisant les données depuis une source Excel vers une base de données MySQL[cite: 6, 7].",
+    "details": [
+        [cite_start]"Recherche de commandes par leur code[cite: 9].",
+        [cite_start]"Scan de produits avec indicateurs visuels (vert/rouge) pour la correspondance[cite: 10].",
+        [cite_start]"Formulaire de validation avec signature (nom de l'opérateur), date et heure[cite: 11].",
+        [cite_start]"Historique des validations avec options de filtre[cite: 12].",
+        [cite_start]"Synchronisation des données via une macro VBA qui envoie le fichier Excel à une API backend[cite: 13]."
+    ],
+    "tags": [
+        "Node.js",
+        "React",
+        "MySQL",
+        "PWA",
+        "Express.js",
+        "Tailwind CSS"
+    ],
+    "images": [
+        "images/valido.png",
+        "images/valido.png"
+    ],
+    "links": [
+        {
+            "type": "github",
+            "url": "<URL_DE_VOTRE_DEPOT_GITHUB>",
+            "text": "Code Source (GitHub)",
+            "icon": "fa-brands fa-github"
+        }
+    ],
+    "orderable": false
+}
 ]
