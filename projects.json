@@ -84,13 +84,13 @@
   {
         "title": "VALIDO - Gestionnaire de Commandes PWA",
         "category": ["Développement Web", "Automatisation", "Business Intelligence","Progressive Web App"],
-        "description": ["VALIDO est une Progressive Web App (PWA) conçue pour optimiser le processus de validation des commandes en production[cite: 2, 6]. [cite_start]Elle permet aux opérateurs de rechercher des commandes, scanner des codes produits et valider des expéditions, tout en synchronisant les données depuis une source Excel vers une base de données MySQL"],
+        "description": ["VALIDO est une Progressive Web App (PWA) conçue pour optimiser le processus de validation des commandes en production.Elle permet aux opérateurs de rechercher des commandes, scanner des codes produits et valider des expéditions, tout en synchronisant les données depuis une source Excel vers une base de données MySQL"],
         "details": [
-        "Recherche de commandes par leur code[cite: 9].",
-        "Scan de produits avec indicateurs visuels (vert/rouge) pour la correspondance[cite: 10].",
-        "Formulaire de validation avec signature (nom de l'opérateur), date et heure[cite: 11].",
-        "Historique des validations avec options de filtre[cite: 12].",
-        "Synchronisation des données via une macro VBA qui envoie le fichier Excel à une API backend[cite: 13]."
+        "Recherche de commandes par leur code.",
+        "Scan de produits avec indicateurs visuels (vert/rouge) pour la correspondance.",
+        "Formulaire de validation avec signature (nom de l'opérateur), date et heure.",
+        "Historique des validations avec options de filtre.",
+        "Synchronisation des données via une macro VBA qui envoie le fichier Excel à une API backend."
         ],
       "tags": [
         "Node.js",
@@ -101,13 +101,13 @@
         "Tailwind CSS"
     ],
     "images": [
-        "images/valido.png",
-        "images/valido.png"
+        "images/Valido.png",
+        "images/valido 2.png"
     ],
     "links": [
         {
             "type": "github",
-            "url": "<https://github.com/minikel/valido-pwa.git>",
+            "url": "https://github.com/minikel/valido-pwa.git",
             "text": "Code Source (GitHub)",
             "icon": "fa-brands fa-github"
         }
